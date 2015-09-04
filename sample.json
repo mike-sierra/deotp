@@ -1,0 +1,15 @@
+{
+    "licenseeFirstName" : "Henry",
+    "model" : "Civic",
+    "numberOfWheels" : 4,
+    "registrationState" : "MA",
+    "licenseNumber"  : "SHC26HD8",
+    "make" : "Honda",
+    "numberOfDoors" : 4,
+    "licenseeLastName" : "Magoo",
+    "vehicleType" : "car",
+    "licenseExpires"  : "10/26/15",
+    "sunroof" : true,
+    "licenseState"  : "MA",
+    "registrationNumber" : "GK64Y2K"
+},

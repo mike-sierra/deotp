@@ -32,8 +32,10 @@ to flexibly edit large batches of files.
 
         $ git checkout -- modified_file.md
 
-    (If the `git` command is not available on your system, you can
-    also __Download__ an archive of the files.)
+    (If the `git` command isn't installed, your Mac should prompt you
+    to install a suite of developer utilities from the App Store. Go
+    ahead and do that. Otherwise you can also __Download__ an archive
+    of the files.)
 
     Also check to see if you have a hidden Emacs configuration file in
     your home directory:
@@ -172,16 +174,18 @@ to flexibly edit large batches of files.
 
     The screen is split into two different _windows_. One displays one
     of the source files, and the other displays the directory listing.
-    Type __C-x o__ (the letter `o`) to swap the cursor from one buffer
-    to another. Within the directory listing, select one of the other
-    source files than the one displaying. Type __C-x 1__ to expand
-    that buffer's window to fill the screen. (Alternately, __C-x 0__
-    removes the current window and displays the other.)
+    Type __C-x o__ (the lowercase letter `o`) to swap the cursor from
+    one buffer to another. Within the directory listing, select one of
+    the other source files than the one displaying. Type __C-x 1__ to
+    expand that buffer's window to fill the screen. (Alternately,
+    __C-x 0__ (the number zero) removes the current window and
+    displays the other.)
 
     While these windows often correspond to editing buffers, they're
     not quite the same thing. To prove this, run __C-x 2__ to split
     the current buffer into separate windows.  You can now make edits
-    in one window that are reflected in the other, and navigate to
+    in one window that are reflected in the other, use __C-x o__ to
+    swap between the two views of the same buffer, and navigate to
     another part of the file from what the other window displays.
 
     Finally, type __C-x C-b__ to list buffers in a separate window. It
@@ -236,22 +240,22 @@ to flexibly edit large batches of files.
     somewhere else. The distance between the point and the mark is
     called the _region_, an arbitrary stretch of text that you can
     kill.  To cut/kill the region, type __C-w__. To paste it back in,
-    type _C-y_, which stands for _yank_.
+    type _C-y_, which in Emacs is referred to as a _yank_.
 
     To copy a region, you can either run those two commands in
     sequence, or type __M-w__, which toggles the cursor to give you
     feedback on where the region is. By default the region is
     invisible, but if you type __C-SPACE__ twice when setting the
-    mark, a temporary _Transient-mark-mode_ displays it. (Type __C-g__
-    to cancel the mode.)
+    mark, a temporary _Transient-mark-mode_ displays it. (Type
+    __C-SPACE__ again or __C-g__ to cancel the mode.)
 
     Ordinarily if you're in the middle of a paragraph and run __<u>M-x
-    kill-p</u>aragraph__, it kills from the point to the end of the
-    paragraph. Instead, typing __M-h__ first marks it and repositions
-    the point at the top of the paragraph.  That's equivalent to
-    navigating to the end of the paragraph, setting the mark, then
-    navigating to the start. You can then run __C-w__ to kill the
-    entire paragraph.
+    kill-p</u>aragraph__, it kills from the cursor/point to the end of
+    the paragraph. Instead, typing __M-h__ first marks it and
+    repositions the point at the top of the paragraph.  That's
+    equivalent to navigating to the end of the paragraph, setting the
+    mark, then navigating to the start. You can then run __C-w__ to
+    kill the entire paragraph.
 
     - _mark_
     - _region_
@@ -280,9 +284,10 @@ to flexibly edit large batches of files.
     column.
 
     Notice that many of the JSON object's keys are not arranged
-    well. Mark a region within the outer braces, then run __<u>M-x
+    well. Mark a region within the outer braces, not including the
+    lines with the braces themselves, then run __<u>M-x
     sort-l</u>ines__. This rearranges the object members so that
-    related _activation_- and _property_-prefixed members cluster
+    related _license_- and _registration_-prefixed members cluster
     together.
 
     Finally, open the accompanying [sample.js](sample.js) JavaScript
@@ -291,7 +296,7 @@ to flexibly edit large batches of files.
     each line is prefixed with `//` to disable the function. Notice
     the editing mode that enables this is `Java/l Abbrev`. If you had
     been editing a Python or Perl source file, it would have commented
-    with a `#` character.
+    each line with a `#` character.
 
 1.  __Ringing up kills__. Go to the start of any line with several
     sentences of text and use __C-z__ a couple of times to zap to the
