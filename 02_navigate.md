@@ -1,7 +1,7 @@
 # Navigating
 
 1.  When you log in, you start out in your _home directory_, the same
-    one you get in the Finder when you choose __Go&rarr;Home__.
+    one you get in the Finder when you choose __Go&rArr;Home__.
     (Directories are often called _folders_ when they appear in a
     graphic interface.)  This command lists files and
     _subdirectories_, which are folders nested within other folders.

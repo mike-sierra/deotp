@@ -232,7 +232,7 @@ to flexibly edit large batches of files.
 
 1.  __Cut and paste__. First, clarify the non-Emacs way to do it.
     Using your mouse, select a bunch of text from the screen.  Then
-    position the cursor and choose __Edit&rarr;Paste__ to insert it.
+    position the cursor and choose __Edit&rArr;Paste__ to insert it.
 
     Emacs's cut-and-paste mechanism is completely separate from the
     Mac clipboard.  Navigate to the start of some block of text, then
