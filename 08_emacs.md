@@ -17,7 +17,7 @@ to flexibly edit large batches of files.
 
         $ mkdir -p ~/sandbox
         $ cd ~/sandbox
-        $ git clone PASTE_URL_HERE
+        $ git clone [PASTE_URL_HERE]
         $ ls
         $ cd basic_unix
 
