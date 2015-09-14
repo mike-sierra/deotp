@@ -2,10 +2,10 @@
 
 1.  Your Mac is made out of Unix, but you need to open a command-line
     _terminal_ to see that. To open your terminal from the Finder,
-    choose __Go&rArr;Applications__. Then navigate to the
+    choose __Go &rArr; Applications__. Then navigate to the
     __Utilities__ subdirectory.  Open __Terminal.app__.  Once it
     displays in the dock, Option-click on the icon and choose
-    __Options&rArr;Keep In Dock__, because it'll be an important tool
+    __Options &rArr; Keep In Dock__, because it'll be an important tool
     for you.
 
     At each step throughout this guide, you'll see a list of each new
@@ -16,7 +16,7 @@
 1.  By default, the terminal displays as a small window with
     black-on-white text that's hard to see and may cause eye strain.
     Your should change that. Under
-    __Terminal&rArr;Preferences&rArr;Settings__, choose the
+    __Terminal &rArr; Preferences &rArr; Settings__, choose the
     __Homebrew__ theme. Under the __Startup__ tab, select __New window
     with settings__ along with the __Homebrew__ theme.  Under
     __View__, choose __Bigger__ until the terminal better fills the
