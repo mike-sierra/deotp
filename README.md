@@ -59,14 +59,13 @@ Here's what's in each section:
 Once you get to those last three sections, you should be able to
 design some powerful commands of your own.
 
-## Deep End of the Pool Emacs and Regular Expresssions
+## Deep End of the Pool Emacs and Regular Expressions
 
 What if you have to edit a bunch of text files quickly?  After
-learning the basics of Unix, do a deep dive into Emacs and a more
-advanced and practical discussion of regular expressions.
-
-Since Emacs has a Windows client, Windows users can also benefit from
-these two units:
+learning the basics of Unix, do a deep dive into the Emacs text editor
+and the regular expressions that can make it so powerful.  Since Emacs
+has a Windows client, Windows users can also benefit from these two
+units:
 
 1.  [Emacs](08_emacs.md) walks you through all the major features of
     the Emacs text editor. By the end, you should be able to make
@@ -79,6 +78,4 @@ these two units:
 1.  [Regexp](09_re.md) shows you how to design flexible
     pattern-matching searches in Emacs. By the end, you should be able
     to build a regular expression that detects passive-voice
-    constructions. (Or, systems under which passive-voice
-    constructions are detected.)
-
+    constructions.
