@@ -70,17 +70,16 @@ design some powerful commands of your own.
 
 What if you have to edit a bunch of text files quickly?  After
 learning the basics of Unix, do a deep dive into the Emacs text editor
-and the regular expressions that can make it so powerful.  Since Emacs
-has a Windows client, Windows users can also benefit from these two
-units:
+and the regular expressions that can make it and other text editors so
+powerful. (Note that Emacs has a Windows client, so anyone can benefit
+from both of these.)
 
 1.  [Emacs](08_emacs.md) walks you through all the major features of
     the Emacs text editor. By the end, you should be able to make
     changes to many source files at once. Even if you don't end up
     editing text files in Emacs, you should at least be aware of the
     powerful editing features you should come to expect. This unit is
-    designed to make you into a very productive snob and edit many,
-    many files at once.
+    designed to make you into a very productive snob.
 
 1.  [Regexp](09_re.md) shows you how to design flexible
     pattern-matching searches in Emacs. By the end, you should be able
