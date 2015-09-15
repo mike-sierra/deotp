@@ -5,19 +5,25 @@ Okay, okay, so not a great name, but at least it's not taken.
 ## Deep End of the Pool Unix
 
 What if you had to learn Unix in a hurry? At least enough to become
-productive? These training units should help. They're optimized for
-inspired beginners who don't know where to start, and is based on
-materials targeted to my 14-year-old daughter. While most
-_programmers_ know Unix, it's not just for them.  You can apply the
-skills you learn here if you have to grapple with all sorts of _text
-processing_ tasks. You may benefit if you're any kind of _writer_, or
-have to do _research_ on any kind of data, or even if you work with
-programmers and want to keep an eye on what they're up to.
+productive? This set of training units should help.  Read this if
+you're a Mac user and consider yourself an inspired beginner at Unix
+who simply don't know where to start.  This is based on materials
+targeted to my 14-year-old daughter, and perhaps you can find a few
+clues of that.
+
+While most _programmers_ know Unix, it's not just for them.  You can
+apply the skills you learn here if you have to grapple with a wide
+variety of _text processing_ tasks.  You may benefit if you're any
+kind of _writer_, or have to do _research_ on any kind of data, or if
+you have to keep track of a bunch of _stuff_, or even if you work with
+programmers and want to keep an eye on what they're up to, the
+scoundrels.
 
 Go through each lesson's steps in the order below, making sure to
 _type out each command_ to get used to it, get it into your fingers,
-and to understand the output. The text also calls out common bits of
-Unix jargon, for your reference, if you're into that sort of thing.
+and to understand the output interactively. The text also calls out
+common bits of Unix jargon, for your reference, if you're into that
+sort of thing.
 
 By the end, you should be able to create intelligent tools and design
 your own workflows when working in a collaborative environment. You
