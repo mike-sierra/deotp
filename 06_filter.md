@@ -1,15 +1,15 @@
 # Filtering
 
 1.  In the previous section you saw how to generate a hit count for
-    repeated lines within a file. Here's how to do a hit count for
-    matches across many files within a directory tree:
+    repeated lines within a file. Here's how to do a similar hit count
+    for matches across many files within a directory tree:
 
         $ grep -cri "search" .
 
     The dot at the end means to search the current directory.  The
-    `-r` searches recursively.  The `-i` matches both upper- and
-    lowercase.  The `-c` displays the number of matches rather than
-    the contents of the matching line.
+    `-r` searches recursively through subdirectories.  The `-i`
+    matches both upper- and lowercase.  The `-c` displays the number
+    of matches rather than the contents of the matching line.
 
     The output is unsorted, and includes files with no hits at all:
 
