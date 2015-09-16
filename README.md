@@ -7,7 +7,7 @@ Okay, okay, so not a great name, but at least it's not taken.
 What if you had to learn Unix in a hurry? At least enough to become
 productive? This set of training units should help.  Read this if
 you're a Mac user and consider yourself an inspired beginner at Unix
-who simply don't know where to start.  This is based on materials
+who simply doesn't know where to start.  This is based on materials
 targeted to my 14-year-old daughter, and perhaps you can find a few
 clues of that.
 
