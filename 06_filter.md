@@ -2,7 +2,8 @@
 
 1.  In the previous section you saw how to generate a hit count for
     repeated lines within a file. Here's how to do a similar hit count
-    for matching text across many files within a directory tree:
+    for lines of matching text across many files within a directory
+    tree:
 
         $ grep -cri "search" .
 
