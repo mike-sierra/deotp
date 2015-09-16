@@ -8,8 +8,8 @@
     __Options &rArr; Keep In Dock__, because it'll be an important tool
     for you.
 
-    At each step throughout this guide, you'll see a list of each new
-    bit of jargon you encounter, for example:
+    At each appropriate step throughout this guide, you'll see a list
+    of each new bit of jargon you encounter, for example:
 
     - _terminal_
 
@@ -30,9 +30,10 @@
     command-line interface that pre-dates mouse-driven graphic user
     interfaces.  The shell allows you to interact with the computer's
     file system using a bunch of different Unix _utilities_, which the
-    following sections discuss. The command-line may seem daunting at
+    following sections discuss. The command line may seem daunting at
     first, but you can do a lot of things there that are more
     difficult in a graphic interface.
 
     - _shell_
     - _file system_
+    - _utility_
