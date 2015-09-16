@@ -11,8 +11,8 @@
         $ ls
 
     The `$` that appears above is just a common convention to show
-    when you're in a shell context. (The _bash_ shell displays a `$`
-    prompt, while the alternative _C_ shell uses a `%` prompt.)
+    when you're typing commands in a shell. (The _bash_ shell displays
+    a `$` prompt, while the alternative _C_ shell uses a `%` prompt.)
 
     - _shell_
     - _utility_ / _command_
@@ -29,8 +29,8 @@
         $ ls
 
     Avoid any _whitespace_ characters and most special
-    non-_alphanumeric_ characters in filenames.  But underscores are
-    safe:
+    non-_alphanumeric_ characters in filenames.  Use underscore
+    characters to visually separate word components:
 
         $ touch harry_stiles.txt
 
@@ -72,11 +72,11 @@
 
     ...or _any_ file starting with `l`:
 
-        $ ls l*.txt
+        $ ls l*
 
     - _wildcards_
 
-1.  Less useful, the `?` wildcard matches a single character. This
+1.  Not as common, the `?` wildcard matches a single character. This
     lists text files that have single-character filenames except for
     the extension:
 
@@ -101,14 +101,14 @@
 
     Here's how to specify more than one range, in this case any file
     starting with alphanumeric, or an underscore or dash. (The dash is
-    a considered literally when it appears at the end.)
+    considered literally when it appears at the end.)
 
         $ ls [a-zA-Z0-9_-]*
 
     - _character range_
 
-1.  Tab completion can save you a _lot_ of time. Type this without
-    following it with a carriage return:
+1.  Tab completion can save you a _lot_ of time. Type this, but
+    _without_ immediately following it with a carriage return:
 
         $ ls l
 
@@ -137,9 +137,9 @@
         $ ls *
 
 1.  Modify a command with an _option_: If commands are verbs and the
-    arguments are nouns, think of the options as adverbs. This shows
-    all _hidden_ files in the directory whose filenames start with a
-    dot:
+    arguments are nouns, think of the options as adverbs.  This shows
+    _all_ files, including _hidden_ files in the directory whose
+    filenames start with a dot:
 
         $ ls -a
 
@@ -148,7 +148,7 @@
     - command _options_
     - _hidden_ files
 
-    This shows a _long_ listing of inscrutable (for now) details about
+1.  This shows a _long_ listing of inscrutable (for now) details about
     the file:
 
         $ ls -l
@@ -157,7 +157,12 @@
 
         $ ls -al
 
-1.  Show your current _working directory_:
+    Otherwise you can always express them separately:
+
+        $ ls -a -l
+
+1.  Show your current _working directory_, where `YOURLOGIN` stands
+    for the short name you use to log into your Mac:
 
         $ pwd
         /Users/YOURLOGIN
@@ -172,7 +177,7 @@
     - _working directory_ (current)
     - path _delimiter_
 
-1.  Go to the _parent directory_:
+1.  Go to the upper _parent directory_:
 
         $ cd ..
         $ pwd
@@ -185,7 +190,8 @@
     Whenever you specify paths that don't start with a slash, they're
     called _relative paths_. In every full directory listing, `..`
     refers to the parent directory, and `.` refers to the current
-    directory. You could have expressed that last command this way:
+    directory. You could have also expressed that last command this
+    way:
 
         $ cd ./YOURLOGIN
 
@@ -204,7 +210,7 @@
     Your Mac probably isn't set up with more than one _user_, but if it
     were, you could use this to distinguish whose home directory:
 
-        $ ls ~YOURLOGIN/harry.txt
+        $ ls ~SOMELOGIN/harry.txt
 
     - _user_
     - _directory tree_
@@ -239,7 +245,7 @@
         $ open file.html
 
 1.  You can join separate _commands_ on the same line with semicolons,
-    where they're often referred to as _statements_:
+    in which case they're often referred to as _statements_:
 
         $ touch file.html; open file.html
 
@@ -253,17 +259,17 @@
 
         $ touch file.html || open error.html
 
-    Think of these _and_/_or_ statements as handy one-line variations
-    on if/then and unless/then conditional logic. (If that sounds
-    far-fetched, consider these two sentences: _Be nice to me, and I
-    will be your friend. Be nice to me, or I will punch you in the
-    nose._)
+    Think of these as _and_/_or_ statements. You can use them as handy
+    one-line variations on if/then and unless/then conditional logic.
+    (If that sounds far-fetched, consider these two sentences: _Be
+    nice to me, and I will be your friend. Be nice to me, or I will
+    punch you in the nose._)
 
     - _statement_
     - _conditional_
 
 1.  Open anything with anything. Suppose you have an HTML file, but
-    you want to edit the raw source with your default editor:
+    you want to edit the raw source with your default text editor:
 
         $ open -e file.html
 
@@ -296,8 +302,16 @@
 
         $ man open
 
-    The doc displays in a _paging_ mode. Type a space character to go
-    to the next screen, or type `q` to quit out of it.
+    The documentation displays in a _paging_ mode. Type a space
+    character to go to the next screen, or type `q` to quit out of it.
+
+    The `man` documentation is often very detailed and obscure, so
+    don't worry if it's difficult to read. It's mostly a great way to
+    learn about useful options, such as this one which simply opens
+    the containing folder in the Finder and selects the file as if you
+    had clicked on it:
+
+        $ open -R file.html
 
     - _manual_ page
     - _paging_
