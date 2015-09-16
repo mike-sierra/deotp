@@ -46,8 +46,8 @@
 
     - _pipe_
 
-1.  Copy the file, then try to sort it and put the results back in the
-    file:
+1.  Copy the file, then try to sort it and put the results back into
+    the same file:
 
         $ cp file.txt fail.txt
         $ sort fail.txt > fail.txt
@@ -55,11 +55,12 @@
 
     What went wrong? The file is now empty. In many programming
     environments, that second command would be interpreted as: read
-    the file, sort the contents, then write it to the file. The shell
-    is actually a bit dumber, and sees the file-clobbering `>` as the
-    very first thing to do, so when it comes time to read the file,
-    it's empty.  To make it work, you need to direct the output to a
-    _different_ file, then use that to clobber the original:
+    the file, sort the contents, then write the result to the file.
+    The shell is actually a bit dumber, and sees the file-clobbering
+    `>` as the very first and most important thing to do. So when it
+    comes time to read the file, it's already empty.  To make it work,
+    you need to direct the output to a _different_ file, then use that
+    to clobber the original:
 
         $ sort file.txt > temp.txt
         $ mv temp.txt file.txt
@@ -75,18 +76,19 @@
         $ sort file.txt | uniq -c | sort -rn | head -5
 
     It may help to slowly build this chain of commands from the left
-    to fully understand it. After the initial sort, `uniq -c` counts
-    sequences of repeated adjacent lines and prepends that number to
-    the output. The second `sort` uses `-n` to sort _numerically_
-    rather than by string. (If you sort `1`, `5`, and `10` using
-    default string sorting, `5` comes last because it sorts from the
-    left.) The sort's `-r` option _reverses_ the order to display
-    larger values on top, and the final `head` command displays only
-    the first five lines.
+    to the right to fully understand it. After the initial `sort`
+    command, `uniq -c` counts sequences of repeated adjacent lines and
+    prepends that number to a single collapsed line of output. The
+    second `sort` uses `-n` to sort _numerically_ rather than by
+    string. (If you sort `1`, `5`, and `10` using default string
+    sorting, `5` comes last because it sorts from the left one
+    character at a time.) The sort's `-r` option _reverses_ the order
+    to display larger values on top, and the final `head` command
+    displays only the first five lines.
 
 1.  Here's how to send the results of any Unix command through email:
 
-        $ cat file.txt | mail -s "subject" your@email.com
+        $ cat file.txt | mail -s "subject line" your@email.com
 
 1.  Command chains and redirects tend to flow from left to right, so
     this alternative file input redirect syntax can be a bit
@@ -102,10 +104,16 @@
     legitimate output, and this can appear all jumbled and confusing
     on the screen. You can redirect the _standard error_ stream
     separately from _standard output_, using the same clobber/append
-    distinction:
+    distinction. These both send _standard output_ to `output.txt`,
+    and _standard error_ to `errlog.txt`:
 
         $ some_command > output.txt 2>  errlog.txt
         $ some_command > output.txt 2>> errlog.txt
+
+    A variation like this keeps _standard output_ displaying on the
+    screen, but removes any errors from view.
+
+        $ some_command 2>  errlog.txt
 
     - _standard error_
 
@@ -127,7 +135,7 @@
 
         $ touch `cat list`
 
-    - _command interpolation_
+    - _interpolation_
 
 1.  Here's how you might use this in real life to build a complex
     command. Suppose you have a directory tree full of JavaScript
@@ -138,8 +146,9 @@
 
         $ find . -print
 
-    (The `find` command is unusual, and actually has to be told to
-    produce output with the `-print` option.)
+    The `find` command is pretty unusual. Unlike other Unix utilities,
+    it actually has to be told to produce output with the `-print`
+    option.
 
     This narrows the output to JavaScript files ending with `js`. (The
     `$` in the regular expression means _at the end of the line_.)
