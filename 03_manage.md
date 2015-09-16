@@ -4,12 +4,13 @@
 
         $ cp harry.txt harry_stiles.txt
 
-1.  Rename a file. This also _clobbers_ any existing file with the
-    same name:
+1.  Rename a file. This also _clobbers_ (or _overwrites_) any existing
+    file with the same name:
 
         $ cp harry_stiles.txt harry.txt
 
     - _clobber_
+    - _overwrite_
 
 1.  Create, then remove a file.
 
@@ -26,8 +27,9 @@
         $ rm -i *.txt
 
     But suppose you accidentally tried to remove many, many files.
-    Whenever you're in such a special mode outside of the shell
-    itself, you can always type `CTRL-c` to cancel out of it.
+    Whenever you're in such a special _mode_ outside of the shell
+    itself, you can always type `CTRL-c` to cancel out of it. Think of
+    it as an all-purpose escape hatch.
 
     - _interactive_
     - _mode_
@@ -75,7 +77,7 @@
     in there:
 
         $ mkdir -p onedir/members
-        $ mkdir -p ~/target/
+        $ mkdir -p ~/target
         $ cp -R onedir ~/target
 
 1.  Move and rename a directory:
@@ -83,17 +85,17 @@
         $ mv ~/target/onedir ~/one_direction
 
 1.  Efficiently _mirror_ a set of files. It's often hard to use `cp`
-    to reflect a directory structure after it's already been
-    copied. This works much better:
+    to reflect a directory structure after it's already been copied.
+    This works much better:
 
         $ mkdir -p onedir/members
         $ mkdir -p ~/target/
         $ rsync -av --delete onedir ~/target
 
     When you run that last command more than once, it only copies
-    files to the target that have been _updated_. The `--delete`
-    option means any files removed from the `onedir` directory also
-    get deleted from the `target`.
+    source files to the target that have been _updated_. The
+    `--delete` option means any files removed from the `onedir`
+    directory also get deleted from the `target`.
 
     - _mirror_
 
@@ -120,11 +122,11 @@
 
         $ !525
 
-1.  Run the most recent command starting with `rsy` (i.e. `rsync`):
+1.  Run the most recent command starting with `rsy` (such as `rsync`):
 
         $ !rsy
 
-1.  Run the previous command in its entirety:
+1.  Two bangs runs the previous command in its entirety:
 
         $ !!
 
@@ -132,7 +134,7 @@
     statements separated by semicolons, so you can keep modifying the
     previous command with others:
 
-        $ !! ; another_command
+        $ !! ; CHAIN_ANOTHER_COMMAND
 
 1.  Invoke the last argument from the previous command:
 

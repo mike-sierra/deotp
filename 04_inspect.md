@@ -40,7 +40,8 @@
 
     It displays lines of text with `body` anywhere in it. In Unix,
     lines are a very important unit of content, even though each line
-    can be very long.
+    can be very long. Lines that are longer than 80 characters display
+    as if they wrap onto the following line.
 
     - _line_
 
@@ -51,7 +52,9 @@
     Note the need for the quotes. Otherwise the shell interprets
     `BODY` and `class` separately as arguments, and it gets
     confused. (If this doesn't work, try it with any other two
-    adjacent words you see in the file.)
+    adjacent words you see in the file.) A _string_ is any sequence of
+    characters, and can include letters, digits, whitespace, and
+    punctuation characters.
 
     - _string_
     - _case-insensitive_
@@ -71,10 +74,10 @@
 1.  The `grep` command stands for _global regular expression parser_,
     a fancy way of saying the stuff within the quotes is special.
     _Regular expressions_ (aka _regex_ or _regexps_) offer a system of
-    matching _patterns_ that resemble shell wildcards, but work
-    differently. Suppose the word _body_ appears all over the place
-    and you only want to see it when it's used as an HTML tag. You
-    could do one command each to match the open and close tags:
+    matching _patterns_. These patterns resemble shell wildcards, but
+    work differently. Suppose the word _body_ appears all over the
+    place and you only want to see it when it's used as an HTML tag.
+    You could do one command each to match the open and close tags:
 
         $ grep -n "<body" page.html
         $ grep -n "</body" page.html
