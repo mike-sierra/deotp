@@ -88,19 +88,20 @@
 
         $ pwd
 
-    Then edit the `.bashrc` file again and add this line:
+    Then edit the `~/.bashrc` file again and add a line like this,
+    pasting in the results of the `pwd` command:
 
-        gtth="/Users/msierra/sandbox/deotp"
+        deepend="/Users/msierra/sandbox/deotp"
 
     After you run `source ~/.bashrc` again, this is all you need to
     navigate to that directory:
 
-        $ cd $gtth
+        $ cd $deepend
 
     You never have to remember it again.  You can flexibly combine
     these shell variables with other expressions:
 
-        $ ls $gtth/*md
+        $ ls $deepend/*md
 
     The dollar sign is called a _sigil_, which some programming
     languages use to mark certain kinds of objects.
