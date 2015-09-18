@@ -69,7 +69,7 @@
 1.  __Reusable variables.__ Shell _variables_ offer another way to
     create shortcuts. Open this page with your browser:
 
-    <https://github.com/mike-sierra/gtthg>
+    <https://github.com/mike-sierra/deotp>
 
     Search for the word _clone_ on the page and copy the nearby _clone
     URL_. Then create a common directory in which to collect all the
@@ -78,11 +78,11 @@
 
         $ mkdir ~/sandbox
         $ cd !$
-        $ git clone https://github.com/mike-sierra/gtthg.git
+        $ git clone https://github.com/mike-sierra/deotp.git
 
     After that's done, navigate to the repo:
 
-        $ cd gtthg
+        $ cd deotp
 
     Now list the current directory path and copy it off your screen:
 
@@ -90,7 +90,7 @@
 
     Then edit the `.bashrc` file again and add this line:
 
-        gtth="/Users/msierra/sandbox/gtthg"
+        gtth="/Users/msierra/sandbox/deotp"
 
     After you run `source ~/.bashrc` again, this is all you need to
     navigate to that directory:

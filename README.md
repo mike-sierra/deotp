@@ -64,7 +64,9 @@ Here's what's in each section:
     `else`, `fi`)
 
 Once you get to those last three sections, you should be able to
-design some powerful commands of your own.
+design some powerful commands of your own.  However, every effort was
+made to ignore anything more esoteric having to do with administering
+your computer or networks.
 
 ## Deep End of the Pool Emacs and Regular Expressions
 
