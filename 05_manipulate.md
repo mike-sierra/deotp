@@ -90,6 +90,11 @@
 
         $ cat file.txt | mail -s "subject line" your@email.com
 
+    If you're in an administered work environment, you may be able to
+    run `lpr` to send the text directly to your default printer:
+
+        $ cat file.txt | lpr
+
 1.  Command chains and redirects tend to flow from left to right, so
     this alternative file input redirect syntax can be a bit
     confusing:
