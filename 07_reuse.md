@@ -365,3 +365,8 @@
     - _daemon_
     - _cron job_
 
+> __NOTE__: A separate `launchd` utility handles scheduled tasks on
+  Macs, and Apple no longer supports `cron`. However, the setup and
+  syntax are more complicated, `cron` still works fine on Macs despite
+  being deprecated, and `launchd` doesn't work on non-Mac systems such
+  as Linux.
