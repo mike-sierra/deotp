@@ -1,16 +1,24 @@
 # Numbers
 
-- foo = 3
-- bar = 8
-
-- int / float types
-
-- + - * / % **
-
-- // (floor)
-
-- ++ --
-
-- Grouped expressions
-
-- operator precedence
+- 3
+- 3 + 8
+- _expression_
+- _operator_
+- 3 - 8
+- 3 * 8
+- 3 * -8
+- 3 / 8
+- 3.0 / 8
+- type(8)
+- type(8.0)
+- _integer_
+- _float_
+- _type check_
+- 3 % 8
+- _modulo_
+- 3.0 // 8
+- _floor_
+- 3 ** 8
+- 3 * 8 + 2
+- 3 * (8 + 2)
+- _precedence_

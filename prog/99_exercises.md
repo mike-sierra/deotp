@@ -25,3 +25,8 @@
 - try: pass
 
 - def X(): yield Y; X().next()
+
+
+- import math
+- math.pi
+- _module_

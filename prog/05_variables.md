@@ -1,18 +1,20 @@
 # Variables
 
-- foo = 'assignment'
-
-- foo = bar = 'multiple'
-
-- foo = 2 + 4 (assign expressions)
-
-- += -= *= /= **= //= (assignment operators)
-
-- naming conventions: camelCase, snake_case
-
-- naming conventions: alphanumeric
-
-- print: interpolation or printf(%)
-
-- sigil?
-
+- foo = 8
+- _assignment_
+- _declare_
+- _naming requirements_
+- _naming conventions_: snake_case, camelCase
+- sigil or no?
+- bar = 4  + 4
+- (bar = (4  + 4))
+- foo = bar = 8
+- foo + bar
+- _multiple assignment_
+- foo = foo + 1
+- foo += 1
+- foo -= 1
+- _assignment operator_
+- foo++
+- foo--
+- _increment_
