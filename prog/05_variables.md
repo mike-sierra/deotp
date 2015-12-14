@@ -13,3 +13,6 @@
 - naming conventions: alphanumeric
 
 - print: interpolation or printf(%)
+
+- sigil?
+
