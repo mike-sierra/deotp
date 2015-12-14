@@ -30,3 +30,8 @@
 - import math
 - math.pi
 - _module_
+
+
+
+
+- repr(foo)

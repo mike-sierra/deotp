@@ -1,10 +1,10 @@
 # Run
 
-- Run a file
+- $ python myFile.py
+- print "Hello, World!"
 
-- Interactive
+- $python
+- CTRL-d
 
-- Comments
-
-- Statements
+- expressions
 
