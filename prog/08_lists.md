@@ -1,10 +1,13 @@
 # Lists
 
+- arr = ['foo', 'bar']
+- arr.append('waa')
+- arr.pop()
+- arr.sort()
+- arr.reverse()
+- arr.extend(arr2)
+
 - pop, push, shift, unshift (append)
-
-- sort
-
-- reversed
 
 - slice
 
@@ -22,8 +25,5 @@
 - arr[-4:]
 - arr[:-1]
 - arr[-4:-2]
-
 - for i in range(len(myList)):
-
 - 2D arrays
-

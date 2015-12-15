@@ -1,4 +1,4 @@
 # Split
 
-- str.split
+- str.split('str')
 - arr.join

@@ -1,21 +1,32 @@
 # Logic
 
-- None/Undef/Null
-
-- prompt user: raw_input()
-
-- == > < >= <= != <>
-
-- 0 < x < 10
-
-- if/else (unless/else)
-
-- is
-
-- elsif
-
-- and/or/not
-
-- ||=
-
-- if: X; elif: Y; else: J
+- foo == bar
+- _boolean_
+- _truth_
+- _comparison operator_
+- foo != bar
+- foo < bar
+- foo > bar
+- foo > bar > 10
+- foo <= bar
+- foo >= bar
+- foo <> bar
+- str1 > str2
+- foo = True
+- foo = False
+- foo = None
+- _null_
+- _existence_
+- 1 == 1.0
+- 1 is 1.0
+- foo is None
+- foo is not None
+- if foo
+- else
+- elif
+- if not / else
+- foo and bar
+- foo or bar
+- foo and not bar
+- raw_input('prompt> ')
+- _indent_
