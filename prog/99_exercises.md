@@ -31,3 +31,6 @@
 - _module_
 
 - repr(foo)
+
+- xrange()
+
