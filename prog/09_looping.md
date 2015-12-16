@@ -1,4 +1,4 @@
-# Iteration
+# Looping
 
 - for x in arr:
 
