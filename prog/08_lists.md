@@ -1,21 +1,31 @@
 # Lists
 
 - arr = ['foo', 'bar']
+- arr[0]
+- _zero-based indexing_
+- arr[-1]
+- arr[2] = None; # !!!
+- arr[-5] = None; # !!!
 - arr.append('waa')
 - arr.pop()
 - arr.sort()
 - arr.reverse()
 - arr.extend(arr2)
+- arr.remove('zayn');
+- zayn in arr
+- arr1 + concat2
+- repeated = arr * 2
+- arr[2:3]
+- arr[:3]
+- arr[2:]
+- _slice_
+- max(arr)
+- min(arr)
+- arr.pop()
+- arr.pop(-1)
+- arr.insert(1, 'foo')
+- arr.index(4)
 
-- pop, push, shift, unshift (append)
-
-- slice
-
-- splice()
-
-- arr[0]
-
-- arr[-1]
 
 - vivication?  myList=[0 for i in range(10)]
 
@@ -27,3 +37,4 @@
 - arr[-4:-2]
 - for i in range(len(myList)):
 - 2D arrays
+- str[0] # !

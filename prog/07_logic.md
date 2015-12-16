@@ -28,5 +28,4 @@
 - foo and bar
 - foo or bar
 - foo and not bar
-- raw_input('prompt> ')
 - _indent_
