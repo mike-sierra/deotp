@@ -29,3 +29,8 @@
 - foo or bar
 - foo and not bar
 - _indent_
+
+- foo is bar # True
+- id(foo); id(bar)
+- bar = 2
+- foo is bar # False

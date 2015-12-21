@@ -240,6 +240,7 @@ There will be more bugs. It's a good thing to make mistakes along the way.
 
 ---
 
-# Wrap Up
+# Linguistics
 
 - Other numeric types: _long_ and _complex_.
+

@@ -1,38 +1,11 @@
-# Variables
+slidenumbers: true
+footer: Unit 5. Variables
 
-- foo = 8
-- _assignment_
-- _declare_
-- foo = 1; Foo = 2
-- _naming conventions_: snake_case, camelCase
-- _case sensitive_
-- 1foo = 8 # !!!
-- foo1 = 8 # OK
-- _naming requirements_
-- for = 8 # !!!
-- _reserved words_
-- sigil or no?
-- bar = 4 + 4
-- (bar = (4  + 4))
-- foo, bar = divmod(16, 3)
-- foo, bar, bad = divmod(16, 3) # !!!
-- foo = divmod(16, 3) # TUPLE
-- divmod = 2 # !!!
-- foo + bar
-- foo = bar = 8
-- _multiple assignment_
-- foo = foo + 1
-- foo = (foo + 1)
-- foo += 1
-- foo -= 1
-- _assignment operator_
-- foo++
-- foo--
-- _increment/decrement operators_
-- foo = bar = 8
-- foo is bar # True
-- id(foo); id(bar)
-- bar = 2
-- foo is bar # False
+# Unit 5. Variables
 
-- _alias_
+In this unit you learn how to store the value of expressions and change that value over the life of an app.
+
+~~~ python
+{{variables_py.md}}
+~~~
+

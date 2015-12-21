@@ -44,3 +44,5 @@
 - for i in range(len(myList)):
 - 2D arrays
 - str[0] # !
+
+- _alias_
