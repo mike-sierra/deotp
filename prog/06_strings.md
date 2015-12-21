@@ -1,11 +1,14 @@
 # Strings
 
 - 'foo'
+- var = "foo"
 - 'The foo\'s bar'
 - 'The foo\'s backslash: \\'
 - "The foo's bar"
 - "The foo's newline:\n"
 - "The foo's newline:\n\ttab indent"
+- foo = "All work and no play makes Jack a dull boy. All work and no play\
+  makes Jack a dull boy. All work and no play makes Jack a dull boy."
 - foo = """string region"""
 - _here files?_
 - 'foo' "bar"
@@ -21,3 +24,7 @@
 here files that disable codes?
 
 - raw_input('prompt> ')
+
+- bin(255)
+- oct(255)
+- hex(255)
