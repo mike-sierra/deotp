@@ -46,3 +46,9 @@
 - str[0] # !
 
 - _alias_
+
+>>> txt.find('bar')
+4
+>>> 'bar' in txt
+True
+

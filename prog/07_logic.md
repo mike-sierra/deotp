@@ -34,3 +34,10 @@
 - id(foo); id(bar)
 - bar = 2
 - foo is bar # False
+
+>>> txt.endswith('bar')
+True
+>>> txt.endswith('foo')
+False
+>>> txt.startswith('foo')
+True

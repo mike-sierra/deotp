@@ -201,7 +201,7 @@ Pick an integer between 0 and 10. The basic random number generator picks betwee
     >>> random.random() * 10
     8.743672233775921
 
-Functions that lack arguments get called an empty set of parentheses: `()`. Functions called via dot notation from a module like this are referred to as _methods_.
+Functions that lack arguments get called an empty set of parentheses: `()`. Functions called via dot notation from a module or other object like this are referred to as _methods_.
 
 ---
 
