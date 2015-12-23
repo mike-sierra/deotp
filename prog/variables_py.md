@@ -141,7 +141,7 @@ The number of variables and values need to correspond:
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
     ValueError: need more than 2 values to unpack
-    
+
 However, it's possible to assign a sequence of more than one value to a single variable. More about this later:
 
     >>> bug = divmod(16, 3)
@@ -216,6 +216,10 @@ Both variables separately reference the same _value_, but the variables themselv
 
 ---
 
-### Linguistics
+# FIN
+
+<!--
 
 - $sigil
+
+-->

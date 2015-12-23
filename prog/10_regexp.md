@@ -1,7 +1,9 @@
-# Regular Expressions
+slidenumbers: true
+footer: Unit 10. Regular Expressions
 
-- str.split() # spaces
-- str.split('str')
-- str.split('str', max)
-- arr.join
-- str.splitlines()
+# Unit 10. Regular Expressions
+
+~~~ python
+{{regex_py.md}}
+~~~
+

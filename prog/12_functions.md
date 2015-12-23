@@ -1,13 +1,9 @@
-# Functions
+slidenumbers: true
+footer: Unit 12. Functions
 
-- def foo(*args)
-- def foo(arg1, arg2)
-- def foo()
+# Unit 12. Functions
 
-- return
+~~~ python
+{{functions_py.md}}
+~~~
 
-*args
-**kwargs
-
-def mixed(*args, **kwargs):
-mixed('arg1', 'arg2', 'arg3', 'key'='value')

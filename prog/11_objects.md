@@ -1,12 +1,9 @@
-# Objects
+slidenumbers: true
+footer: Unit 11. Objects
 
-- 'key' in hash
-- hash['key'] is None
-- hash['key']
+# Unit 11. Objects
 
-- del hash['key']
-
-- keys/values
-
-- key exists/defined/true
+~~~ python
+{{objects_py.md}}
+~~~
 

@@ -1,17 +1,9 @@
-# Looping
+slidenumbers: true
+footer: Unit 9. Looping
 
-- for x in arr:
+# Unit 9. Looping
 
-- for i in range(len(arr)):
+~~~ python
+{{looping_py.md}}
+~~~
 
-- C-style?
-
-- while (until)
-
-- next/last/redo (break/continue)
-
-- label
-
-- while arr:
-
-- while len(arr):

@@ -1,7 +1,5 @@
-# Syntax
+slidenumbers: true
+footer: Unit 3. Syntax
 
-- e.g. python inline
+# Unit 3. Syntax
 
-- comments
-
-- statements
