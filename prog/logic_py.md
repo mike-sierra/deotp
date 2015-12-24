@@ -110,3 +110,16 @@ _truth_
 
 ## Try/Except
 
+<!--
+
+>>> o = 'foo'
+>>> type(o) is str
+True
+>>> o = 3.0
+>>> type(o) is int
+False
+>>> o = 3
+>>> type(o) is int
+True
+
+-->

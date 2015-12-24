@@ -43,6 +43,4 @@
 
 - not just strings
 
-<!--
 
--->

@@ -28,6 +28,4 @@
 
 - from optparse import OptionParser
 
-<!--
 
--->

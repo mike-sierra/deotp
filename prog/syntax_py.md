@@ -10,15 +10,15 @@
 
 ## Comments
 
-    #!/usr/bin/python 
+    #!/usr/bin/python
 
     # This is a comment.
 
     """
-    All work and no play makes jack a dull boy.  All work and no play
-    makes jack a dull boy.  All work and no play makes jack a dull
-    boy.  All work and no play makes jack a dull boy.
-    """ 
+    All work and no play makes Jack a dull boy.  All work and no play
+    makes Jack a dull boy.  All work and no play makes Jack a dull
+    boy.  All work and no play makes Jack a dull boy.
+    """
 
     print "Hello World!" # This is also a comment
 
@@ -26,9 +26,9 @@
 
 ## Stacking
 
-total = item_one + \
-        item_two + \
-        item_three
+    total = item_one + \
+            item_two + \
+            item_three
 
 ---
 
@@ -38,29 +38,33 @@ total = item_one + \
      print "Hello World!"
 
     if True:
-        print 't'
+        print 'yes'
     else:
-        print 'f'
+        print 'no'
 
     for char in "Hello World!":
         print char
 
+- Your editor should handle it
+
 ---
 
-## Chaining
+## Inline Statements
 
     this(); that()
 
 ---
 
-## Nesting
-
-- freeform within [], {}, or ()
+## Arrays, Lists, Tuples, Objects
 
     this_really_long_thing(
         1,
         2
     )
+
+- trailing comma leniency
+
+- freeform within `[ ]`, `{ }`, or `( )`
 
 ---
 
@@ -68,6 +72,4 @@ total = item_one + \
 
 - try/except
 
-<!--
 
--->

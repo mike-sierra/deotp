@@ -363,10 +363,6 @@ This converts the user's string response to an integer:
 
 Any input other than an integer fails. You'll learn to fix the bug.
 
----
-
-# FIN
-
 <!--
 
 open file

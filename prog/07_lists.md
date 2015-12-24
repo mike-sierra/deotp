@@ -1,9 +1,16 @@
 slidenumbers: true
-footer: Unit 8. Lists
+footer: Unit 7. Lists
 
-# Unit 8. Lists
+# Unit 7. Lists
 
 ~~~ python
 {{lists_py.md}}
 ~~~
 
+~~~ perl
+{{lists_pl.md}}
+~~~
+
+---
+
+# FIN

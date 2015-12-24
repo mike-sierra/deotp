@@ -1,9 +1,16 @@
 slidenumbers: true
-footer: Unit 9. Looping
+footer: Unit 8. Looping
 
-# Unit 9. Looping
+# Unit 8. Looping
 
 ~~~ python
 {{looping_py.md}}
 ~~~
 
+~~~ perl
+{{looping_pl.md}}
+~~~
+
+---
+
+# FIN

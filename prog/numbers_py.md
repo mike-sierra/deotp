@@ -76,14 +76,14 @@ When either of the numbers is a _float_ type, the result is also a float. Otherw
 
 ## Numeric Types
 
-Python differentiates two _types_ of number:
+Python differentiates two _types_ of number, `int` and `float`:
 
     >>> type(3)
     <type 'int'>
     >>> type( 3.0 )
     <type 'float'>
 
-The `type` is a built-in _function_, and what you place inside the parentheses is an _argument_ to that function.
+The `type()` is a built-in _function_, and what you place inside the parentheses is an _argument_ to that function.
 
 What you're doing here, by the way, is called _type-checking_.
 
@@ -132,7 +132,7 @@ There's a corresponding function that does the same thing, one that takes _two_ 
 
 ---
 
-# Precedence
+## Precedence
 
 You can chain together many operators:
 
@@ -147,7 +147,7 @@ By default, it follows standard mathematical _precedence_. This forces the addit
 
 ---
 
-# Modules
+## Modules
 
 Many Python functions are available via external _modules_, which you need to _import_ to activate.
 
@@ -159,7 +159,7 @@ Once you do, you access the module's component objects through _dot notation_:
 
 ---
 
-# Namespaces
+## Namespaces
 
 The `math` module defines its own unique _namespace_. Use `dir()` to find out what objects are available in that namespace, just like listing files in a subdirectory:
 
@@ -174,7 +174,7 @@ The `math` module defines its own unique _namespace_. Use `dir()` to find out wh
 
 ---
 
-# Floor, Ceiling
+## Floor, Ceiling
 
 Some mathematical functions are available in the main namespace, and others within `math`. These round numbers down or up:
 
@@ -191,7 +191,7 @@ closest:
 
 ---
 
-# Exercise: Pick a Random Number
+## Exercise: Pick a Random Number
 
 Pick an integer between 0 and 10. The basic random number generator picks between 0 and 1, which you multiply by 10:
 
@@ -205,7 +205,7 @@ Functions that lack arguments get called an empty set of parentheses: `()`. Func
 
 ---
 
-# Exercise (cont'd)
+## Exercise (cont'd)
 
 Now convert the decimal to an integer:
 
@@ -218,7 +218,7 @@ There's a problem here. You'll _never_ see it pick the number `10`.
 
 ---
 
-# Exercise (cont'd)
+## Exercise (cont'd)
 
 Look at the expression carefully:
 
@@ -230,17 +230,13 @@ The problem? The `int()` truncates it, the same as using `floor()` to always rou
 
 ---
 
-# Exercise (cont'd)
+## Exercise (cont'd)
 
 Fix your first bug. Round the number, then convert to an integer:
 
     >>> int( round( random.random() * 10 ) )
 
 There will be more bugs. It's a good thing to make mistakes along the way.
-
----
-
-# FIN
 
 <!--
 

@@ -214,10 +214,6 @@ Both variables separately reference the same _value_, but the variables themselv
     >>> foo
     8
 
----
-
-# FIN
-
 <!--
 
 - $sigil

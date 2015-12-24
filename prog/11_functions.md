@@ -1,9 +1,16 @@
 slidenumbers: true
-footer: Unit 12. Functions
+footer: Unit 11. Functions
 
-# Unit 12. Functions
+# Unit 11. Functions
 
 ~~~ python
 {{functions_py.md}}
 ~~~
 
+~~~ perl
+{{functions_pl.md}}
+~~~
+
+---
+
+# FIN

@@ -1,12 +1,22 @@
 slidenumbers: true
-footer: Unit 4. Numbers
+footer: Unit 3. Numbers
 
-# Unit 4. Numbers
+# Unit 3. Numbers
 
-In this unit you learn how to manipulate numeric values, see how
-they're grouped into expressions, and perform simple arithmetic.
+{{numbers.md}}
 
 ~~~ python
 {{numbers_py.md}}
 ~~~
 
+~~~ perl
+{{numbers_pl.md}}
+~~~
+
+~~~ lang
+{{numbers_lang.md}}
+~~~
+
+---
+
+# FIN
