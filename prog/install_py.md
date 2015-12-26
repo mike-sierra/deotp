@@ -18,4 +18,9 @@
 
 - PC
 
+You're learning Python version 2. See it here:
+
+    $ python -V
+
+
 -->

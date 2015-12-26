@@ -19,6 +19,8 @@ __NOTE__: The `=` operator does _not_ mean _equals to_.
 
 It means: _evaluate the thing on the right and put the value into the thing on the left_.
 
+^assignment
+
 ---
 
 ## Assignment (cont'd)
@@ -48,6 +50,8 @@ You can apply the same set of operations to variables as to the fixed values the
 
 Note above the two assignment _statements_ that ordinarily occupy separate lines. You can join them on the same line by separating them with a semicolon.
 
+^statement
+
 ---
 
 ## Variable Names
@@ -60,8 +64,6 @@ Variable names are _case-sensitive_:
     1
 
 They can include any alphanumeric or underscore (`_`) character, but _must_ start with a letter.
-
-Not required, but conventionally they're _snake\_case_, not _camelCase_.
 
 ---
 
@@ -96,17 +98,31 @@ However, nothing prevents you for mistakingly clobbering more extraneous functio
 
 ---
 
+## Variable Names (cont'd)
+
+The #1 most important thing to remember when naming variables?
+
+> Don't name them `foo` and `bar`.
+
+Use names that describe what they actually mean within your application.
+
+But you can get away with it for now.
+
+---
+
 ## Declarations
 
 Other languages may require or allow you to initially _declare_ the name of variables. Python doesn't do that. The act of assigning declares the variable.
 
-This may lead to bugs:
+This may lead to bugs...
 
     >>> foo = 1
 
-...then a typoe later in the code...
+...when paired with a typoe later in the code...
 
     >>> fool = 2
+
+^declaration
 
 ---
 
@@ -169,7 +185,7 @@ Here's a better way to do it, one that doesn't require a second variable:
     >>> foo = 1
     >>> foo = foo + 1
 
-That takes the current value of `foo`, adds `1` to it, then assigns the result back to `foo`. Seeing the expression parse may clarify:
+That takes the current value of `foo`, adds `1` to it, then assigns the result back to `foo`. This is how the expression parses:
 
     >>> foo = (foo + 1)
 
@@ -196,8 +212,6 @@ Assignment operators correspond to each arithmetic operator:
     >>> foo /= bar           # Divide by 3; now 10
     >>> foo **= bar          # Exponentiate; now 1000
 
-__NOTE__: Python doesn't support _increment_/_decrement_ expressions such as `foo++` or `foo--`; substitute `foo+=1` or `foo-=1`.
-
 ---
 
 ## Chained Assignments
@@ -206,7 +220,7 @@ You can put the same value into more than one variable at a time:
 
     >>> bar = foo = 8
 
-Both variables separately reference the same _value_, but the variables themselves are not the same thing:
+Both variables separately reference the same _value_, but the variables themselves are _not_ the same thing:
 
     >>> bar = 4
     >>> bar

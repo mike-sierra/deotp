@@ -9,15 +9,15 @@ Open your interactive editor:
 
 ---
 
-## Delimiters
+## Defining a String
 
-A _string_ is a sequence of arbitrary text:
+A _string_ is a sequence of text, either a single character or as long as you want:
 
     >>> name = "Liam Payne"
     >>> name
     'Liam Payne'
 
-It uses either single or double quote delimiters. There is no difference in Python. They can be can be used interchangeably, as long as the pair matches:
+It uses either single or double quote _delimiters_. They can be can be used interchangeably, as long as the pair matches:
 
     >>> name = 'Liam Payne'   # not "Liam Payne'
 
@@ -25,27 +25,29 @@ It uses either single or double quote delimiters. There is no difference in Pyth
 
 ## Escape Codes
 
-If you need a literal quote character in the string, precede it with a
-backslash to _escape_ it:
+If you need a literal quote character in the string, precede it with a backslash to _escape_ it, and prevent it from parsing as a delimiter:
 
-    >>> description = 'Liam Payne\'s hair'
-    >>> description = "Liam Payne's hair"
+    >>> description = 'Liam\'s hair'
 
-The same is true for literal backslash characters:
+You don't need the backslash above if you use double quotes:
 
-    >>> description = "Liam Payne's backslash character: \\"
+    >>> description = "Liam's hair"
+
+You also have to escape literal backslash characters:
+
+    >>> description = "This is a backslash character: \\"
 
 ---
 
 ## Special Characters
 
-The `\t` code defines a tab character. The emulator repeats the string code back to you, but it interprets when using `print()`:
+The `\t` code defines a tab character. The emulator repeats the encoded string code back to you, but it interprets when using `print()`:
 
-    >>> one_dir = "Liam\tNiall\tLouie\tHarry"
+    >>> one_dir = "Liam\tNiall\tHarry\tLouie"
     >>> one_dir
-    'Liam\tNiall\tLouie\tHarry'
+    'Liam\tNiall\tHarry\tLouie'
     >>> print(one_dir)
-    Liam    Niall   Louie   Harry
+    Liam    Niall   Harry   Louie
 
 Use `print()` to output text as part of a command-line script, rather than inspecting it in the emulator.
 
@@ -55,14 +57,14 @@ Use `print()` to output text as part of a command-line script, rather than inspe
 
 The `\n` code defines a linebreak:
 
-    >>> one_dir = 'Liam\nNiall\nLouie\nHarry'
+    >>> one_dir = 'Liam\nNiall\nHarry\nLouie'
     >>> print one_dir
     Liam
     Niall
-    Louie
     Harry
+    Louie
 
-__NOTE__: The `print()` function doesn't require parentheses.
+__NOTE__: The `print()` method doesn't require parentheses.
 
 ---
 
@@ -100,7 +102,7 @@ Using triple quotes means you never have to worry about single quotes in the tex
 
 ## Cleaning Up Whitespace
 
-The `strip()` method removes the extra whitespace characters, but only from the start or end of the string:
+The `strip()` method removes any extra whitespace characters, but only from the start or end of the string:
 
     >>> unstripped = "\nstring filled\nwith linebreaks\n\n"
     >>> print len(unstripped)
@@ -109,7 +111,7 @@ The `strip()` method removes the extra whitespace characters, but only from the 
     >>> print len(stripped)
     22
 
-The `len()` function tells you how many characters are in the string, before and after.
+The `len()` method tells you how many characters are in the string, before and after.
 
 ---
 
@@ -143,7 +145,7 @@ You have to use `str()` to convert the number to a string:
 
 ## String Formatting (cont'd)
 
-String formats offer a much more elegant way to mix data types within a string:
+String _formats_ offer a much more elegant way to mix data types within a string:
 
     >>> name = 'Louie Tomlinson'
     >>> age = 24
@@ -211,7 +213,7 @@ Why does this work? The result of `name.title()` is itself a _string_, one on wh
 
 ## Method Chaining (cont'd)
 
-You can also call string methods directly on literal string values. This may clarify how the method chain works:
+You can call string methods not only on vatiables that contain strings, but directly on literal string values. This shows how the method chain works:
 
     >>> 'louie tomlinson'.title()
     'Louie Tomlinson'
@@ -282,10 +284,10 @@ Make sure the strings aren't longer than the reserved space:
 
 When the thing to the left of an `*` operator is a string, it repeats it by whatever number is on the right:
 
-    >>> first_name = 'louie'            # 'louie'
-    >>> first_name += ' '               # 'louie '
-    >>> song_title = first_name * 2     # 'louie louie '
-    >>> song_title.title().strip()      # 'Louie Louie'
+    >>> first_name = 'louie'       # 'louie'
+    >>> first_name += ' '          # 'louie '
+    >>> title = first_name * 2     # 'louie louie '
+    >>> title.title().strip()      # 'Louie Louie'
 
 Note also the `+=` operator concatenates the string variable in place.
 
@@ -296,26 +298,26 @@ Note also the `+=` operator concatenates the string variable in place.
 The `find()` method is one way to tell if a string contains a _substring_:
 
     >>> name = 'Louie'
-    >>> song_title = 'Louie Louie'
-    >>> song_title.find(name)
+    >>> title = 'Louie Louie'
+    >>> title.find(name)
     0
 
-The zero value actually indicates success, not the number of matches. (More about this later.)
+The zero value actually indicates success here, not the number of matches. (More about this later.)
 
 ---
 
 ## Finding Text (cont'd)
 
-If the `find()` fails, it returns `-1`:
+If the `find()` fails, it returns `-1`. Not all methods behave this way:
 
     >>> name = 'louie'
-    >>> song_title = 'Louie Louie'
-    >>> song_title.find(name)
+    >>> title = 'Louie Louie'
+    >>> title.find(name)
     -1
 
-If you want to search case-insensitively, you first _normalize_ the data to properly compare them:
+If you want to search case-insensitively, you first _normalize_ the data to properly compare them, such as by lowercasing both values:
 
-    >>> song_title.lower().find( name.lower() )
+    >>> title.lower().find( name.lower() )
     0
 
 ---
@@ -335,56 +337,45 @@ You can specify an additional argument for the maximum number of changes you wan
 
 ---
 
-## User Input
+## Prompting for User Input
 
-Finally, how do you get text interactively from the user?
+Here's how to interactively prompt for text from the user:
 
     user_input = raw_input('Who is your favorite 1D member? ')
     print user_input   # 'Louie!!!'
 
-The program displays the prompt string, then halts until the user enters any text followed by a carriage return. (The linebreak is not included in the captured input.)
+The program displays the prompt string, then halts the program's execution until the user enters any stretch of text on the command line followed by a carriage return.
+
+(The linebreak is not included in the captured input.)
 
 ---
 
 ## User Input (cont'd)
 
-This converts the user's string response to an integer:
+All text comes in as a string, and you may need to convert it to integers. This works only if users input an integer, a bug you'll learn to fix later:
 
     prompt = """Who is your favorite 1D member?
-    (1) Harry
-    (2) Liam
-    (3) Louie
-    (4) Niall
-    (5) Zayn
-    (0) Don't know
+    1: Harry
+    2: Liam
+    3: Louie
+    4: Niall
+    5: Zayn
+    0: Don't know
     > """
     user_input = int( raw_input(prompt) )
-    print user_input
-
-Any input other than an integer fails. You'll learn to fix the bug.
-
-<!--
-
-open file
 
 ---
 
-## Linguistics
+## Reading Text from Files
 
-- Some languages distinguish single- and double-quoted strings.
+Asking questions on the command line can be useful, but most text comes from reading external files. You run `open()` to create an object that bridges to the file, then `read()` to get its contents:
 
-- Some languages _interpolate_ variables directly within strings.
+    >>> file_name = 'strings.md'     # Where is the file?
+    >>> file_obj = open(file_name)   # Create bridge to file
+    >>> contents = file_obj.read()   # Get content via bridge
+    >>> contents
+    '---\n\n## Introduction\n\nIn this unit you learn:\n\n- different ways
+    to define a text string\n\n- how to format numbers or other strings\n\n-
+    how to search and replace within text\n\n- how to prompt for text on the
+    command line\n\n- how to get text from within a file\n'
 
-- Some languages specify custom _here file_ delimiters.
-
-- `print()` vs `say()`
-
-- Some distinguish concatenation and addition operators.
-
-- Some languages freely _coerce_ numeric values into strings.
-
-- `printf()`
-
-fmt = "The value of %s is roughly %1.2f" % ('PI', math.pi)
-
--->

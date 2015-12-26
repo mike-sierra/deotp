@@ -2,10 +2,6 @@
 
 ## Try It
 
-You're learning Python version 2. See it here:
-
-    $ python -V
-
 Open the interactive emulator and try playing with some of this
 syntax:
 
@@ -21,9 +17,13 @@ Type this:
     >>> 7
     7
 
-You've entered an _expression_, and the emulator repeats it back to you.
+You've entered a simple _expression_, and the emulator repeats it back to you.
 
 Python supports different _types_ of number. This is an _integer_.
+
+^expression
+^type
+^integer
 
 ---
 
@@ -41,6 +41,8 @@ The `+` and `-` are some of Python's built-in _operators_.
 This works too without the whitespace, but may be harder to read:
 
     >>> 7+3
+
+^operator
 
 ---
 
@@ -70,35 +72,40 @@ What should be `2.33` gets truncated to 2.  Try this instead:
     >>> 7 / 3.0
     2.3333333333333335
 
-When either of the numbers is a _float_ type, the result is also a float. Otherwise it stays an integer. (Python 3 fixes this.)
+When either of the numbers is a _float_ (decimal) type, the result is also a float. Otherwise it stays an integer.
+
+^float
 
 ---
 
 ## Numeric Types
 
-Python differentiates two _types_ of number, `int` and `float`:
+Python recognizes different _types_ of number, `int` and `float`:
 
     >>> type(3)
     <type 'int'>
-    >>> type( 3.0 )
+    >>> type(3.0)
     <type 'float'>
 
-The `type()` is a built-in _function_, and what you place inside the parentheses is an _argument_ to that function.
+The `type()` is a built-in _method_, and what you place inside the parentheses is called an _argument_. Sometimes you _call_ a method with no arguments, but it's always trailed with parentheses: `( )`.
 
-What you're doing here, by the way, is called _type-checking_.
+^type
+^method
+^argument
+^calling
 
 ---
 
 ## Numeric Types (cont'd)
 
-You often have to convert from one data type to another:
+The `int()` and `float()` methods convert from one number type to another. This truncates a floating-point expression to an integer:
 
     >>> 80 / 3.0
     26.666666666666668
     >>> int(80.0 / 3)
     26
 
-In this case, `float()` converts the truncated result of the integer operation:
+This expresses a truncated integer as floating-point:
 
     >>> float(80 / 3)
     26.0
@@ -117,6 +124,8 @@ This truncates quotients, but keeps the number floating-point:
     >>> 8.0 // 3
     2.0
 
+^modulo
+
 ---
 
 ## Exponents
@@ -126,7 +135,7 @@ The `**` operator provides exponentiation, one number to the power of another:
     >>> 8 ** 3
     512
 
-There's a corresponding function that does the same thing, one that takes _two_ arguments, spearated with a comma:
+There's a corresponding method that does the same thing, one that takes _two_ arguments, separated from each other with a comma:
 
     >>> pow(8, 3)
 
@@ -145,23 +154,30 @@ By default, it follows standard mathematical _precedence_. This forces the addit
     30
     >>> (3 * (8 + 2)) # Same
 
+^precedence
+
 ---
 
 ## Modules
 
-Many Python functions are available via external _modules_, which you need to _import_ to activate.
-
-Once you do, you access the module's component objects through _dot notation_:
+Many Python methods are available via external _modules_, which you need to _import_ to activate. Once you do, you access the module's component objects through _dot notation_.
 
     >>> import math
     >>> math.pi
     3.141592653589793
 
+`math.pi` is a simple object _property_, which unlike a method is not followed with parentheses. It's the difference between a noun and a verb.
+
+^module
+^import
+^dot notation
+^property
+
 ---
 
 ## Namespaces
 
-The `math` module defines its own unique _namespace_. Use `dir()` to find out what objects are available in that namespace, just like listing files in a subdirectory:
+The `math` module you imported defines its own unique _namespace_. Use `dir()` to find out what methods and properties are available in that namespace, just like listing files in a subdirectory:
 
     >>> dir(math)
     ['__doc__', '__file__', '__name__', '__package__', 'acos',
@@ -171,6 +187,26 @@ The `math` module defines its own unique _namespace_. Use `dir()` to find out wh
       'gamma', 'hypot', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log',
       'log10', 'log1p', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh',
       'sqrt', 'tan', 'tanh', 'trunc']
+
+^namespace
+
+---
+
+## Namespaces (cont'd)
+
+The `dir()` listing doesn't tell you which items are properties and which are methods, but you can _type-check_ methods without calling them:
+
+    >>> type(math.e)
+    <type 'float'>
+    >>> math.e
+    2.718281828459045
+
+    >>> type(math.factorial)
+    <type 'builtin_function_or_method'>
+    >>> math.factorial(8)
+    40320
+
+^type-checking
 
 ---
 
@@ -183,8 +219,7 @@ Some mathematical functions are available in the main namespace, and others with
     >>> math.ceil(8.6)
     9.0
 
-The built-in `round()` function goes to whichever whole number is
-closest:
+The built-in `round()` method picks the closest whole number:
 
     >>> round(8.6)
     9.0
@@ -200,8 +235,6 @@ Pick an integer between 0 and 10. The basic random number generator picks betwee
     0.3994189239450856
     >>> random.random() * 10
     8.743672233775921
-
-Functions that lack arguments get called an empty set of parentheses: `()`. Functions called via dot notation from a module or other object like this are referred to as _methods_.
 
 ---
 
@@ -226,20 +259,15 @@ Look at the expression carefully:
 
 The expression inside the parentheses is fine. It generates a floating-point number between 0 and 10.
 
-The problem? The `int()` truncates it, the same as using `floor()` to always round downward. It happens even if the original random number is `9.9999`.
+The problem? The `int()` method truncates it, the same as using `floor()` to always round downward. It happens even if the original random number is `9.9999`.
 
 ---
 
 ## Exercise (cont'd)
 
-Fix your first bug. Round the number, then convert to an integer:
+This is your first _bug_. Round the number, _then_ convert to an integer:
 
     >>> int( round( random.random() * 10 ) )
 
 There will be more bugs. It's a good thing to make mistakes along the way.
 
-<!--
-
-- Other numeric types: _long_ and _complex_.
-
--->

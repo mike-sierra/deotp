@@ -3,7 +3,7 @@ footer: Unit 4. Variables
 
 # Unit 4. Variables
 
-In this unit you learn how to store the value of expressions and change that value over the life of an app.
+{{variables.md}}
 
 ~~~ python
 {{variables_py.md}}
@@ -11,6 +11,10 @@ In this unit you learn how to store the value of expressions and change that val
 
 ~~~ perl
 {{variables_pl.md}}
+~~~
+
+~~~ lang
+{{variables_lang.md}}
 ~~~
 
 ---
