@@ -12,7 +12,7 @@
 
 ---
 
-### Remove Key
+## Remove Key
 
     del hash['key']
 
@@ -42,5 +42,4 @@
 ## Key Anything
 
 - not just strings
-
 

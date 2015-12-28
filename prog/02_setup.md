@@ -27,6 +27,8 @@ footer: Unit 2. Setup
 {{syntax_pl.md}}
 ~~~
 
+{{syntax_lang.md}}
+
 ---
 
 # FIN
