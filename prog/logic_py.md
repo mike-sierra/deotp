@@ -2,54 +2,287 @@
 
 ## Try It
 
-Open the interactive emulator and try playing with some of this
-syntax:
+For this unit, edit a Python script file in one window...
 
-    $ python
-    >>>
+    $ touch test.py
+    $ open -e test.py   # or use the text editor of your choice
 
----
+...and run it in another:
 
-## Booleans
-
-The `==` operator checks if two expressions are equivalent:
-
-    >>> 1 == 1
-    True
-    >>> 1 == 0
-    False
-
-The `True` or `False` values are known as _boolean_ values, after the mathemetician George Boole.
-
-^boolean
-^truth
+    $ python test.py
 
 ---
 
-## Comparison Operators
+## Truth
 
-Here are all the ways you can compare numbers:
+The programs you write become powerful when they respond differently to various inputs.  They execute different sections of code based on whether some condition is _true_ or _false_.
 
-    >>> age_harry = 21
-    >>> age_liam = 22
-    >>> age_liam == age_harry      # equals?
-    False
-    >>> age_liam != age_harry      # not equal?
-    True
-    >>> age_liam > age_harry       # greater than?
-    True
-    >>> age_liam < age_harry       # less than?
-    False
-    >>> age_liam >= age_harry      # greater than or equal?
-    True
-    >>> age_liam <= age_harry      # less than or equal?
-    False
+There's a special _boolean_ data type for _true_/_false_ values, but you can also check other data types such as numbers and strings for _truth_.
 
-^ comparison operator
+Various `if` and `else` statements behave like switches in a model railroad.  The train only goes down a section of track under certain circumstances.
 
 ---
 
-## if
+## Truth (cont'd)
+
+Unlike the `=` assignment operator, the `==` operator checks if the values on either side are equivalent:
+
+    foo, bar = 1, 1
+    print foo == bar
+    True
+
+The expression releases a _boolean_ value of `True`. This is `False`:
+
+    foo, bar = 1, 0
+    print foo == bar
+    False
+
+---
+
+## Identity
+
+An `is` test is different. It checks if the two objects being compared are exactly the same thing, not if they evaluate the same. In this case, you're comparing an `int` and a `float` type:
+
+    foo = 1
+    bar = 1.0
+    print foo == bar    # True
+    print foo is bar    # False
+
+It compares objects' underlying _identity_.
+
+---
+
+## Assigning Booleans
+
+There are only two boolean values, `True` and `False` (capitalized), but you can assign them to variables:
+
+    are_equal = foo == bar
+    are_same = foo is bar
+
+Variables that contain a single value like this, such as a number, string, or boolean, are known as _scalars_.
+
+---
+
+## If Statements
+
+You make many decisions by asking `if` something is true:
+
+    if foo == bar:
+        print 'values are equal'
+
+The colon at the end of the `if` line marks the start of a _block_ of statements to execute if the values are equivalent. In this case, there is only a single `print` statement within the block.
+
+The line with the `print` statement _must_ be indented.
+
+---
+
+## if/else
+
+An `else` clause executes another block of code if the expression you're testing evaluates as `False`:
+
+    if foo == bar:
+        print 'values are equal'
+    else:
+        print 'values are not equal'
+
+You can also chain together more than one comparison:
+
+    if value1 == value2 == value3: # ...
+
+---
+
+## if/else (cont'd)
+
+The `!=` operator means _not equal_, and returns the exact reverse of the `==` operator:
+
+    if foo != bar:
+        print 'values are not equal'
+    else:
+        print 'values are equal'
+
+You might express the test like this if you expect the values you're comparing are typically _not_ equal.
+
+---
+
+## if/elif/else
+
+You can add more `elif` tests before the final `else`. The `<` and `>` test for less-than and greater-than:
+
+    if foo == bar:
+        print "values are equal"
+    elif foo < bar:
+        print "{0} is less than {1}".format(foo, bar)
+    elif foo > bar:
+        print "{0} is greater than {1}".format(foo, bar)
+    else:
+        print "this block can't possibly execute"
+
+Also try: `<=` (less than or equal), `>=` (greater than or equal)
+
+---
+
+## if/elif/else (cont'd)
+
+If there's only a single statement within the block, it can be merged on the same line as the `if`, `elif`, or `else`:
+
+    if foo == bar: print "values are equal"
+    elif foo < bar: print "{0} is less than {1}".format(foo, bar)
+    elif foo > bar: print "{0} is greater than {1}".format(foo, bar)
+    else: print "this block can't possibly execute"
+
+However, this can make it harder to read.
+
+---
+
+## not
+
+Adding `not` before a test reverses it, flipping `True` and `False`:
+
+    if not foo == bar:
+        "values are not equal"
+
+Here's how it parses. If the inner expression is `False`, the `not` makes the outer expression `True`:
+
+    if (not (foo == bar)):
+
+(It works the same as `foo != bar`, but is more complicated.)
+
+---
+
+## And/Or
+
+---
+
+## Wider Truth
+
+While comparison operators all return boolean values, you can also test the truth of other kinds of value, such as numbers and strings.
+
+Suppose ratings must be from `1` to `10`, and a default value of `0` means the user hasn't yet provided a rating.
+
+    rating = 0
+    if not rating:
+        print "You didn't provide a rating yet"
+
+Any numeric expression that evaluates to zero is `False`.
+
+---
+
+## Wider Truth (cont'd)
+
+Any empty string value is also `False`. Suppose you prompt users for a string:
+
+    prompt = """Who's your favorite 1D member: Liam, Niall, Harry, or Louie?
+    > """
+    user_input = raw_input()
+
+If users type nothing but a carriage return, it results in an empty string (`""`). This tests for that case:
+
+    if not user_input:
+        print "You didn't respond!"
+
+---
+
+## Existence
+
+There's also a special value called `None` that indicates _lack of a value_. You may use it to _initialize_ a default value before resetting it:
+
+    user_input = None
+
+It also evaluates as `False`, but you typically test if values _exist_ separately from whether they're _true_:
+
+    if user_input is None:
+        print "no value"
+    elif not user_input:
+        print "evaluates to false"
+
+---
+
+## String Tests
+
+Many string methods return boolean values. These check if a string is prefixed or suffixed with a substring.
+
+Is a filename a Python script?
+
+    filename.endswith('.py')
+
+This matches both `README.txt` and `README.md`:
+
+    filename.startswith('README')
+
+---
+
+## String Tests (cont'd)
+
+`in` checks if a substring appears anywhere within a string:
+
+    if 'niall' in user_input.lower():
+        print "You chose Niall!"
+
+This is similar to `user_input.find('niall')`, but doesn't tell you where the match appears within the string.
+
+---
+
+## String Tests (cont'd)
+
+These check what kind of characters are in the string:
+
+    text = "1D"
+    text.isspace() # False: does it contain only whitespace characters?
+    text.isalpha() # False: does it contain only letters?
+    text.isdigit() # False: does it contain only digits?
+    text.isalnum() # True: does it contain a mix of letters and digits?
+
+These ignore any characters that aren't letters:
+
+    text.islower() # False: are all its letters lowercase?
+    text.isupper() # True: are all its letters uppercase?
+
+---
+
+## String Comparisons
+
+The `==` and `!=` operators can also compare strings for equivalence:
+
+    if user_input.lower() == 'louie':
+        print "You chose Louie!"
+
+    if user_input.lower() != 'louie':
+        print "Why didn't you choose Louie?"
+
+---
+
+## String Comparisons (cont'd)
+
+Greater-than or less-than tests allow you to _sort_ text. Unlike numbers, strings sort from left to right in [ASCII](http://www.asciitable.com) order:
+
+    foo, bar = 9, 10
+    print foo < bar     # True, because the number 10 is greater than 9
+
+    foo, bar = "9", "10"
+    print foo < bar     # False, because '9' sorts higher than '1'
+
+Also, all uppercase letters sort lower than lowercase letters:
+
+    member1, member2 = "Liam", "harry"
+    member1.lower() > member2.lower() # True, because 'l' comes after 'h'
+    member1 > member2                 # False, because 'L' comes before 'H'
+
+
+---
+
+... and/or
+
+---
+
+
+... try/Except
+
+
+<!--
+
+---
+
+## if . . .
 
 Look again at the code which prompted for an integer:
 
@@ -60,47 +293,6 @@ Look again at the code which prompted for an integer:
     4: Niall
     > """
     user_input = int( raw_input(prompt) )
-
----
-
-## if (cont'd)
-
-This executes a block of code if the expression is `True`:
-
-    if user_input == 1:
-        print 'You chose Harry Stiles'
-
-If the choice is anything but `1`, the `print` block doesn't execute.
-
-Each line within the conditional block _must_ be indented.
-
----
-
-## if/else
-
-If the initial `if` test fails, an `else` executes a different block.
-
-    if user_input == 1:
-        print "You chose Harry Stiles"
-    else:
-        print "Why didn't you choose Harry Stiles???"
-
-Whenever you create an `if` test, it's a good idea to assume it will fail for some unknown reason, and to pair it with an `else` as a _fallback_.
-
----
-
-## if/elif/else
-
-Additional `elif` (else-if) tests execute if the first one fails:
-
-    if user_input == 1:
-        name = 'Harry Stiles'
-    elif user_input == 2:
-        name = 'Liam Payne'
-    elif user_input == 3:
-        name = 'Louie Tomlinson'
-    elif user_input == 4:
-        name = 'Niall Horan'
 
 ---
 
@@ -120,64 +312,78 @@ It's _always_ good to check for unexpected fallback cases. This releases a messa
 
 ---
 
-## Assigning Booleans
+## Error Checking
 
-You can assign boolean values to variables, just as you can for numbers or strings:
+It's usually a good idea to check for errors up front, before the main code. In this case, we expect an integer between `1` and `4`:
 
+    import sys
+    if user_input <= 0:
+        print "Your number is too low!"
+        sys.exit()
+    elif user_input > 4:
+        print "Your number is too high!"
+        sys.exit()
 
-Variables like these that contain a single value are known as _scalars_.
-
----
-
-## And/Or ...
-
-- foo and bar
-- foo or bar
-- foo and not bar
-
-- foo > bar > 10
+Any code following this test can assume the choice is within range.
 
 ---
 
-## Truth
+## or . . .
 
-...
+There's a better way to express this, that reduces the amount of repeated code:
 
----
+    import sys
+    if user_input <= 0 or user_input > 4:
+        print "Your number is out of range!"
+        sys.exit()
 
-## Unless ...
+The entire expression is `True` if either expression on either side of the `or` is also true. If the first is true, the second doesn't evaluate:
 
-- if not / else
-
----
-
-## Strings ...
-
-'foo' in 'bar'
-'bar' in 'fubar'
+    ( (user_input <= 0) or (user_input > 4) )
 
 ---
 
-## Strings ...
+## and . . .
 
-    >>> filename.endswith('.md')
-    True
-    >>> filename.startswith('foo')
-    True
+The `and` operator works the same, but requires both expressions to be true:
 
----
+    user_input > 0 and user_input < 5
 
-## Existence ...
+There's a more concise way to express this `and` expression:
 
-- foo = True
-- foo = False
-- foo = None
-- _null_
-- _existence_
+    0 < user_input < 5
 
 ---
 
-## Is-ness ...
+## not . . .
+
+What if you want to use this to filter out-of-range responses?
+
+    if not 0 < user_input < 5:
+        print "Your number is out of range!"
+        sys.exit()
+
+The chained comparisons identify numbers in range as `True`. Adding `not` reverses the success case to `False`, and the failure case to `True`.
+
+---
+
+## not (cont'd)
+
+It often helps clarify the code to explicitly group the expression:
+
+    if not (0 < user_input < 5): # ...error...
+
+It may also help to translate it all into English:
+
+- successful input must be greater than `0`
+
+- successful input must also be less than `5`
+
+- for the error to run, input must _not_ meet successful criteria
+
+---
+
+## ## Is-ness ...
 
 - 1 == 1.0
 - 1 is 1.0
@@ -189,24 +395,24 @@ Variables like these that contain a single value are known as _scalars_.
 - bar = 2
 - foo is bar # False
 
+    bar = foo or 'Harry'
+
 ---
 
-## Try/Except
+## Identity (cont'd)
 
-...
+When not called as methods, you can compare core _type objects_ such as `int`, `float`, and `str` to `type()`-checked values:
 
-<!--
+    >>> float
+    <type 'float'>
+    >>> int_value, float_value, str_value = 1, 1.0, "1"
+    >>> type(int_value) is int
+    True
+    >>> type(float_value) is float
+    True
+    >>> type(str_value) is str
+    True
 
->>> o = 'foo'
->>> type(o) is str
-True
->>> o = 3.0
->>> type(o) is int
-False
->>> o = 3
->>> type(o) is int
-True
+
 
 -->
-
-

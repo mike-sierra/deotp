@@ -5,12 +5,12 @@
 Typing `python` by itself brings up the interactive Python prompt:
 
     $ python
-    Python 2.7.8 (default, Aug 24 2014, 21:26:19) 
+    Python 2.7.8 (default, Aug 24 2014, 21:26:19)
     [GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
     >>> print "Hello World!"
     Hello World!
-    >>> 
+    >>>
 
 The emulator is a great place to learn the language by testing simple expressions and inspecting the results.  Type __CTRL-d__ to exit.
 
@@ -34,7 +34,7 @@ Add this text to the file, then __Save__:
 
 Return to the Unix command line and run this:
 
-    $ python hello.py 
+    $ python hello.py
 
 It produces this output:
 
@@ -46,7 +46,7 @@ It produces this output:
 
 You can also make the script _executible_ in Unix...
 
-    $ chmod 755 hello.py 
+    $ chmod 755 hello.py
 
 ...after which you can run it in the directory where it resides:
 
