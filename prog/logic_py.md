@@ -39,31 +39,17 @@ The expression releases a _boolean_ value of `True`. This is `False`:
 
 ---
 
-## Identity
-
-An `is` test is different. It checks if the two objects being compared are exactly the same thing, not if they evaluate the same. In this case, you're comparing an `int` and a `float` type:
-
-    foo = 1
-    bar = 1.0
-    print foo == bar    # True
-    print foo is bar    # False
-
-It compares objects' underlying _identity_.
-
----
-
-## Assigning Booleans
+## Booleans
 
 There are only two boolean values, `True` and `False` (capitalized), but you can assign them to variables:
 
     are_equal = foo == bar
-    are_same = foo is bar
 
 Variables that contain a single value like this, such as a number, string, or boolean, are known as _scalars_.
 
 ---
 
-## If Statements
+## if...
 
 You make many decisions by asking `if` something is true:
 
@@ -85,10 +71,6 @@ An `else` clause executes another block of code if the expression you're testing
     else:
         print 'values are not equal'
 
-You can also chain together more than one comparison:
-
-    if value1 == value2 == value3: # ...
-
 ---
 
 ## if/else (cont'd)
@@ -99,8 +81,6 @@ The `!=` operator means _not equal_, and returns the exact reverse of the `==` o
         print 'values are not equal'
     else:
         print 'values are equal'
-
-You might express the test like this if you expect the values you're comparing are typically _not_ equal.
 
 ---
 
@@ -134,7 +114,7 @@ However, this can make it harder to read.
 
 ---
 
-## not
+## not...
 
 Adding `not` before a test reverses it, flipping `True` and `False`:
 
@@ -149,7 +129,162 @@ Here's how it parses. If the inner expression is `False`, the `not` makes the ou
 
 ---
 
-## And/Or
+## Testing String Prefixes and Suffixes
+
+Many string methods return boolean values. These check if a string is prefixed or suffixed with a substring.
+
+Is a filename a Python script?
+
+    filename.endswith('.py')
+
+This matches both `README.txt` and `README.md`:
+
+    filename.startswith('README')
+
+---
+
+## in...
+
+`in` checks if a substring appears anywhere within a string:
+
+    if 'niall' in user_input.lower():
+        print "You chose Niall!"
+
+This is similar to `user_input.find('niall')`, but doesn't tell you where the match appears within the string.
+
+---
+
+## More String Tests
+
+These check what kind of characters are in the string:
+
+    text = "1D"
+    text.isspace() # False: does it contain only whitespace characters?
+    text.isalpha() # False: does it contain only letters?
+    text.isdigit() # False: does it contain only digits?
+    text.isalnum() # True: does it contain a mix of letters and digits?
+
+These ignore any characters that aren't letters:
+
+    text.islower() # False: are all its letters lowercase?
+    text.isupper() # True: are all its letters uppercase?
+
+---
+
+## Comparing Strings
+
+The `==` and `!=` operators can also compare strings for equivalence:
+
+    if user_input.lower() == 'louie':
+        print "You chose Louie!"
+
+    if user_input.lower() != 'louie':
+        print "Why didn't you choose Louie?"
+
+---
+
+## Basic String Sorting
+
+Greater-than or less-than tests allow you to _sort_ text. Unlike numbers, strings sort from left to right in [ASCII](http://www.asciitable.com) order:
+
+    foo, bar = 9, 10
+    print foo < bar     # True, because the number 10 is greater than 9
+
+    foo, bar = "9", "10"
+    print foo < bar     # False, because '9' sorts higher than '1'
+
+Also, all uppercase letters sort lower than lowercase letters:
+
+    member1, member2 = "Liam", "harry"
+    member1.lower() > member2.lower() # True, because 'l' comes after 'h'
+    member1 > member2                 # False, because 'L' comes before 'H'
+
+
+---
+
+## Example: Multiple Choice Input
+
+Look again at the code which prompted for an integer:
+
+    prompt = """Who is your favorite 1D member?
+    1: Harry
+    2: Liam
+    3: Louie
+    4: Niall
+    > """
+    user_input = int( raw_input(prompt) )
+
+---
+
+## Catching Unexpected Cases
+
+It's often wise to check for unexpected _fallback_ cases. This releases a message to yourself, then imports the `sys` module whose `exit()` method terminates the program.
+
+    if user_input == 1:   name = 'Harry Stiles'
+    elif user_input == 2: name = 'Liam Custardbreath'
+    elif user_input == 3: name = 'Louie Tomlinson'
+    elif user_input == 4: name = 'Niall Horan'
+    else:
+        print "BUG: uncaught case when testing user input"
+        import sys
+        sys.exit()
+
+---
+
+## Error Checking
+
+It's also often wise to check for errors up front, separately from the main code. In this case, we expect an integer between `1` and `4`:
+
+    import sys
+    if user_input <= 0:
+        print "Your number is too low!"
+        sys.exit()
+    elif user_input > 4:
+        print "Your number is too high!"
+        sys.exit()
+
+Any code following this test can assume the choice is within range.
+
+---
+
+## or...
+
+There's a better way to express the last two tests, that reduces the amount of repeated code:
+
+    import sys
+    if user_input <= 0 or user_input > 4:
+        print "Your number is out of range!"
+        sys.exit()
+
+The entire expression is `True` if either expression on either side of the `or` is also true. If the first is true, the second doesn't evaluate:
+
+    ( (user_input <= 0) or (user_input > 4) )
+
+---
+
+## and...
+
+The `and` operator works the same, but requires both expressions to be true:
+
+    user_input > 0 and user_input < 5
+
+Chaining together a series of comparison operators offers a more concise way to express it:
+
+    0 < user_input < 5
+
+---
+
+## Compact Logic
+
+Adding `not` checks for out-of-range responses:
+
+    if not 0 < user_input < 5:
+        print "Your number is out of range!"
+        sys.exit()
+
+- successful input must be greater than `0`
+- successful input must also be less than `5`
+- for the error to run, input must _not_ meet successful criteria
 
 ---
 
@@ -182,224 +317,56 @@ If users type nothing but a carriage return, it results in an empty string (`""`
 
 ---
 
-## Existence
+## and/or as Shorthand
 
-There's also a special value called `None` that indicates _lack of a value_. You may use it to _initialize_ a default value before resetting it:
+You can use `and`/`or` not just to perform tests, but to execute code. This exits if the user enters anything besides digits:
 
-    user_input = None
+    user_input = raw_input(prompt)
+    user_input.isdigit() or sys.exit()
 
-It also evaluates as `False`, but you typically test if values _exist_ separately from whether they're _true_:
+You can also use `or` to set a default value in case there's missing input:
 
-    if user_input is None:
-        print "no value"
-    elif not user_input:
-        print "evaluates to false"
+    favorite = user_input or "Harry Stiles"
 
 ---
 
-## String Tests
+## and/or as Shorthand (cont'd)
 
-Many string methods return boolean values. These check if a string is prefixed or suffixed with a substring.
+It works much the same way with `and`. The second expression executes if the first expression evaluates as `True`:
 
-Is a filename a Python script?
+    user_input <= 0 and sys.exit()
 
-    filename.endswith('.py')
+This is equivalent to:
 
-This matches both `README.txt` and `README.md`:
-
-    filename.startswith('README')
+    if user_input <= 0: sys.exit()
 
 ---
 
-## String Tests (cont'd)
+## and/or as Shorthand (cont'd)
 
-`in` checks if a substring appears anywhere within a string:
+All `and`/`or` expressions can be restated using `if`/`not` syntax. Compare how these are phrased:
 
-    if 'niall' in user_input.lower():
-        print "You chose Niall!"
-
-This is similar to `user_input.find('niall')`, but doesn't tell you where the match appears within the string.
-
----
-
-## String Tests (cont'd)
-
-These check what kind of characters are in the string:
-
-    text = "1D"
-    text.isspace() # False: does it contain only whitespace characters?
-    text.isalpha() # False: does it contain only letters?
-    text.isdigit() # False: does it contain only digits?
-    text.isalnum() # True: does it contain a mix of letters and digits?
-
-These ignore any characters that aren't letters:
-
-    text.islower() # False: are all its letters lowercase?
-    text.isupper() # True: are all its letters uppercase?
+- Be nice to me and I will be your friend
+- If you are nice to me, I will be your friend
+- Be nice to me or I will be your enemy
+- If you are not nice to me, I will be your enemy
 
 ---
 
-## String Comparisons
+## is...
 
-The `==` and `!=` operators can also compare strings for equivalence:
+An `is` comparison checks if two objects are exactly the same thing, not if they evaluate the same. In this case, you're comparing an `int` and a `float` type:
 
-    if user_input.lower() == 'louie':
-        print "You chose Louie!"
+    foo = 1
+    bar = 1.0
+    print foo == bar    # True
+    print foo is bar    # False
 
-    if user_input.lower() != 'louie':
-        print "Why didn't you choose Louie?"
-
----
-
-## String Comparisons (cont'd)
-
-Greater-than or less-than tests allow you to _sort_ text. Unlike numbers, strings sort from left to right in [ASCII](http://www.asciitable.com) order:
-
-    foo, bar = 9, 10
-    print foo < bar     # True, because the number 10 is greater than 9
-
-    foo, bar = "9", "10"
-    print foo < bar     # False, because '9' sorts higher than '1'
-
-Also, all uppercase letters sort lower than lowercase letters:
-
-    member1, member2 = "Liam", "harry"
-    member1.lower() > member2.lower() # True, because 'l' comes after 'h'
-    member1 > member2                 # False, because 'L' comes before 'H'
-
+It compares objects' underlying _identity_.
 
 ---
 
-... and/or
-
----
-
-
-... try/Except
-
-
-<!--
-
----
-
-## if . . .
-
-Look again at the code which prompted for an integer:
-
-    prompt = """Who is your favorite 1D member?
-    1: Harry
-    2: Liam
-    3: Louie
-    4: Niall
-    > """
-    user_input = int( raw_input(prompt) )
-
----
-
-## Fallback Cases
-
-It's _always_ good to check for unexpected fallback cases. This releases a message to yourself, then imports the `sys` module whose `exit()` method terminates the program.
-
-    if user_input == 1:
-        name = 'Harry Stiles'
-    # ...
-    elif user_input == 4:
-        name = 'Niall Horan'
-    else:
-        print "BUG: uncaught case when testing user input"
-        import sys
-        sys.exit()
-
----
-
-## Error Checking
-
-It's usually a good idea to check for errors up front, before the main code. In this case, we expect an integer between `1` and `4`:
-
-    import sys
-    if user_input <= 0:
-        print "Your number is too low!"
-        sys.exit()
-    elif user_input > 4:
-        print "Your number is too high!"
-        sys.exit()
-
-Any code following this test can assume the choice is within range.
-
----
-
-## or . . .
-
-There's a better way to express this, that reduces the amount of repeated code:
-
-    import sys
-    if user_input <= 0 or user_input > 4:
-        print "Your number is out of range!"
-        sys.exit()
-
-The entire expression is `True` if either expression on either side of the `or` is also true. If the first is true, the second doesn't evaluate:
-
-    ( (user_input <= 0) or (user_input > 4) )
-
----
-
-## and . . .
-
-The `and` operator works the same, but requires both expressions to be true:
-
-    user_input > 0 and user_input < 5
-
-There's a more concise way to express this `and` expression:
-
-    0 < user_input < 5
-
----
-
-## not . . .
-
-What if you want to use this to filter out-of-range responses?
-
-    if not 0 < user_input < 5:
-        print "Your number is out of range!"
-        sys.exit()
-
-The chained comparisons identify numbers in range as `True`. Adding `not` reverses the success case to `False`, and the failure case to `True`.
-
----
-
-## not (cont'd)
-
-It often helps clarify the code to explicitly group the expression:
-
-    if not (0 < user_input < 5): # ...error...
-
-It may also help to translate it all into English:
-
-- successful input must be greater than `0`
-
-- successful input must also be less than `5`
-
-- for the error to run, input must _not_ meet successful criteria
-
----
-
-## ## Is-ness ...
-
-- 1 == 1.0
-- 1 is 1.0
-- foo is None
-- foo is not None
-
-- foo is bar # True
-- id(foo); id(bar)
-- bar = 2
-- foo is bar # False
-
-    bar = foo or 'Harry'
-
----
-
-## Identity (cont'd)
+## is (cont'd)
 
 When not called as methods, you can compare core _type objects_ such as `int`, `float`, and `str` to `type()`-checked values:
 
@@ -413,6 +380,18 @@ When not called as methods, you can compare core _type objects_ such as `int`, `
     >>> type(str_value) is str
     True
 
+---
 
+## None
 
--->
+There's also a special value called `None` that indicates _lack of a value_. You may use it to _initialize_ a default value before resetting it:
+
+    user_input = None
+
+It also evaluates as `False`, but you typically test if values _exist_ separately from whether they're _true_:
+
+    if user_input is None:
+        print "no value"
+    elif not user_input:
+        print "evaluates to false"
+
