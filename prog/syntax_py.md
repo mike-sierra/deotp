@@ -96,4 +96,3 @@ Another place Python ignores whitespace is within various types of lists bounded
         "makes Jack",
         "a dull boy"
     )
-

@@ -16,4 +16,3 @@ footer: Unit 6. Logic
 ---
 
 # FIN
-

@@ -199,7 +199,6 @@ Also, all uppercase letters sort lower than lowercase letters:
     member1.lower() > member2.lower() # True, because 'l' comes after 'h'
     member1 > member2                 # False, because 'L' comes before 'H'
 
-
 ---
 
 ## Example: Multiple Choice Input
@@ -394,4 +393,3 @@ It also evaluates as `False`, but you typically test if values _exist_ separatel
         print "no value"
     elif not user_input:
         print "evaluates to false"
-

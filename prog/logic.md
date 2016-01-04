@@ -13,4 +13,3 @@ In this unit you learn:
 - how to compare an object's _identity_ rather than its value
 
 - how to compare numbers and strings
-

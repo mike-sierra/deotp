@@ -270,4 +270,3 @@ This is your first _bug_. Round the number, _then_ convert to an integer:
     >>> int( round( random.random() * 10 ) )
 
 There will be more bugs. It's a good thing to make mistakes along the way.
-

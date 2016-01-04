@@ -378,4 +378,3 @@ Asking questions on the command line can be useful, but most text comes from rea
     to define a text string\n\n- how to format numbers or other strings\n\n-
     how to search and replace within text\n\n- how to prompt for text on the
     command line\n\n- how to get text from within a file\n'
-

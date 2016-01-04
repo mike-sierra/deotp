@@ -1,25 +1,25 @@
 ---
 
-## Alias
+### Alias
 
 - for x in arr:
 - _alias_
 
 ---
 
-## Index
+### Index
 
 - for i in range(len(arr)):
 
 ---
 
-## Index
+### Index
 
 - for i in range(len(arr), 2):
 
 ---
 
-## While
+### While
 
 - while
 
@@ -31,34 +31,33 @@
 
 ---
 
-## Until
+### Until
 
 - while not
 
 ---
 
-## Flow Control
+### Flow Control
 
 - next/last/redo (break/continue)
 
----
-
-## Split
-
-- str.split() # spaces
-- str.split('str')
-- str.split('str', max)
-- str.splitlines()
-
----
-
-## Join
-
-- arr.join()
-- arr.join(" ")
-
 <!--
 
-## Labels
+### Labels
+
+---
+
+#### List Comprehensions
+
+- grep
+- map
+- filter
+- vivication?  myList=[0 for i in range(10)]
+
+- arr = range(10)
+
+    with open('foo.txt') as f:
+        for line in f:
+           dostuff(line)
 
 -->

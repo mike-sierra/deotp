@@ -27,4 +27,3 @@
 - command line options
 
 - from optparse import OptionParser
-
