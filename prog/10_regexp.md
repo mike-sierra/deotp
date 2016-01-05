@@ -1,7 +1,7 @@
 slidenumbers: true
-footer: Unit 9. Regular Expressions
+footer: Unit 10. Regular Expressions
 
-# Unit 9. Regular Expressions
+# Unit 10. Regular Expressions
 
 ~~~ python
 {{regex_py.md}}

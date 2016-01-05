@@ -90,7 +90,6 @@ This is actually a bit more efficient: `lines = list(file)`
 
 Once you have an array, you can use `join()` to make a string out of it. You call the method from whatever string you want to glue the array together with:
 
-
     >>> arr = ['liam', 'harry', 'louie', 'niall']
     >>> glue = ', '
     >>> str = glue.join(arr)

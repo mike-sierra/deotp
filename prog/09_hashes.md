@@ -1,7 +1,7 @@
 slidenumbers: true
-footer: Unit 10. Dictionaries
+footer: Unit 9. Dictionaries
 
-# Unit 10. Dictionaries
+# Unit 9. Dictionaries
 
 ~~~ python
 {{hashes_py.md}}

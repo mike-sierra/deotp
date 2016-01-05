@@ -60,4 +60,24 @@
         for line in f:
            dostuff(line)
 
+---
+
+for n in set_of_numbers:
+    if isprime(n):
+        print "Set contains a prime number"
+        break
+else:
+    print "Set did not contain any prime numbers"
+
+---
+
+no REDO!
+
+try:
+finally:
+
+---
+
+with
+
 -->
