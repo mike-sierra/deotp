@@ -1,64 +1,71 @@
 ---
 
-### Alias
+## Iterating
+
+Once you
+
+---
+
+### For ... in
+
+
 
 - for x in arr:
 - _alias_
 
 ---
 
-### Index
+### Range
 
 - for i in range(len(arr)):
-
----
-
-### Index
-
 - for i in range(len(arr), 2):
 
 ---
 
-### While
+### While ...
 
 - while
-
-- while (until)
-
-- while arr:
-
-- while len(arr):
-
----
-
-### Until
-
 - while not
+- while arr:
+- while len(arr):
 
 ---
 
 ### Flow Control
 
-- next/last/redo (break/continue)
-
-<!--
-
-### Labels
+- break
+- continue
 
 ---
 
-#### List Comprehensions
+### for ... else
+
+---
+
+### List Comprehensions
 
 - grep
 - map
 - filter
 - vivication?  myList=[0 for i in range(10)]
 
+
+
+<!--
+
+- next/last/redo (
+
+### Labels
+
+---
+
 - arr = range(10)
 
     with open('foo.txt') as f:
         for line in f:
            dostuff(line)
+
+http://ikigomu.com/?p=1
 
 ---
 
@@ -73,11 +80,10 @@ else:
 
 no REDO!
 
-try:
-finally:
+### try ... finally
 
 ---
 
-with
+### with ... as
 
 -->

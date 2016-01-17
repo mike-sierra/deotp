@@ -479,7 +479,7 @@ If you `find()` text within a string, it returns the index offset:
 
 ## Array vs. Scalar Identity
 
-Array variables are different from scalars in a key way. When you assign a scalar value to different variables, they both refer to the exact same object:
+Array variables are different from scalars in an important way. When you assign a scalar value to different variables, they both refer to the exact same object:
 
     >>> foo = 1
     >>> bar = 1
@@ -506,7 +506,7 @@ Unlike strings and numbers, each array is inherently _mutable_: modifiable in pl
 
 ## Array vs. Scalar Identity (cont'd)
 
-However, when you assign one array variable to another, they both reference the same array object. These are known as _aliases_:
+However, when you assign one array _variable_ to another, they both reference the same array object. These are known as _aliases_:
 
     >>> long_array_variable_name = [1,2,3]
     >>> short = long_array_variable_name
@@ -522,7 +522,7 @@ However, when you assign one array variable to another, they both reference the 
 
 ## Array vs. Scalar Identity (cont'd)
 
-Scalar variables don't work the same way:
+Scalar variables don't work the same way at all:
 
     >>> foo = 1
     >>> bar = foo
@@ -553,11 +553,43 @@ Finally, Python implements a special data structure called a _tuple_ that behave
 
     >>> quotient, remainder = divmod(11, 3)
 
-You can access tuple elements by index, but can't assign to them:
+You can create tuples like this, and refer to their values by index:
 
-    >>> read_only = divmod(11, 3)
-    >>> read_only
-    (3, 2)
-    >>> read_only[0]
-    3
+    >>> tup = (3, 2, 7, 12, 62, 23)
+    >>> tup[-1]
+    23
+    
+---
 
+## Tuples (cont'd)
+
+A slice of a tuple is also a tuple:
+
+    >>> t1 = (3, 2, 7, 12, 62, 23)
+    >>> t2 = t1[:]
+    >>> t2
+    (3, 2, 7, 12, 62, 23)
+
+Unlike an array, each tuple is truly unique, and internally _the same object_:
+
+    >>> t1 is t2
+    True
+
+---
+
+## Tuples (cont'd)
+
+Tuples cannot change size:
+
+    >>> t = (3, 2, 7, 12, 62, 23)
+    >>> t.pop()
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    AttributeError: 'tuple' object has no attribute 'pop'
+
+You can't reassign any of their elements, either:
+
+    >>> t[0] = 21
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: 'tuple' object does not support item assignment

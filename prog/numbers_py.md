@@ -19,7 +19,7 @@ Type this:
 
 You've entered a simple _expression_, and the emulator repeats it back to you.
 
-Python supports different _types_ of number. This is an _integer_.
+Python supports different _types_ of number. This expression is an _integer_.
 
 ^expression
 ^type
@@ -53,10 +53,12 @@ To multiply, use the `*` operator, _not_ `x`:
     >>> 7 * 3
     21
 
-You can specify negative numbers:
+You can always specify negative numbers:
 
     >>> 7 * -3
     -21
+    >>> 7 + -3
+    4
 
 ---
 
@@ -160,7 +162,7 @@ By default, it follows standard mathematical _precedence_. This forces the addit
 
 ## Modules
 
-Many Python methods are available via external _modules_, which you need to _import_ to activate. Once you do, you access the module's component objects through _dot notation_.
+Many Python methods are available via external _modules_, which you need to _import_ to activate. Once you do, you access the module's component objects through nested _dot notation_.
 
     >>> import math
     >>> math.pi
