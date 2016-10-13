@@ -281,7 +281,7 @@ to flexibly edit large batches of files.
     Mark a region around the first set of simple key/value pairs, all
     the lines from `"numberOfDoors"` to `"vehicleModel"`.  Then run
     __<u>M-x sort-l</u>ines__. This rearranges the object members so
-    that related _vehicle_- and _numberOf_-prefixed members cluster
+    that related _vehicle_- and _numberOf_-prefixed members sort
     together.
 
     Suppose readers also need to be able to compare data values more
@@ -299,10 +299,11 @@ to flexibly edit large batches of files.
     region. First, you want to redefine the region to encompass the
     entire file. Go to the top of the file (__M-<__), set the mark
     (__C-SPACE__), then go to the bottom of the file (__M->__). This
-    command invokes the external command line: __C-u M-|__.  Then at
-    the _Shell command on region_ prompt, type __python -m
-    json.tool__. That takes the contents of the region as the input to
-    the JSON-formatting command and replaces it with the processed
+    command invokes the external command line: __C-u M-|__. (That last
+    one is the _bar_ character, also called _pipe_.) Then at the
+    _Shell command on region_ prompt, type __python -m json.tool__.
+    That takes the contents of the region as the input to the
+    JSON-formatting command and replaces it with the processed
     output. You should see a properly formatted JSON object, but with
     all the keys alphabetized and the value alignment lost.
 
