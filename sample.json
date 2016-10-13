@@ -1,16 +1,10 @@
-
 {
-    "licenseeFirstName" : "Henry",
-    "model" : "Civic",
-    "numberOfWheels" : 4,
-    "registrationState" : "MA",
-    "licenseNumber"  : "SHC26HD8",
-    "make" : "Honda",
-    "numberOfDoors" : 4,
-    "licenseeLastName" : "Magoo",
-    "vehicleType" : "car",
-    "licenseExpires"  : "10/26/15",
-    "sunroof" : true,
-    "licenseState"  : "MA",
-    "registrationNumber" : "GK64Y2K"
-},
+ "numberOfDoors": 4,
+ "vehicleMake": "Honda",
+ "hasSunroof": true,
+ "vehicleType": "car",
+ "numberOfWheels": 4,
+ "vehicleModel": "Civic",
+ "registration": { "registrationId": "GK64Y2K", "registrationState": "MA" },
+ "license": { "firstName": "Henry", "lastName": "Magoo", "licenseExpires": "10/26/15", "licenseId": "SHC26HD8", "licenseState": "MA" }
+}

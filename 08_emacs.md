@@ -276,19 +276,35 @@ to flexibly edit large batches of files.
     line after the first indents.
 
     Now open the [sample.json](sample.json) file, which shows the kind
-    of sample data that might appear in documentation. Suppose readers
-    need to be able to compare data values more easily. Mark a region
-    around the entire block of code, then run __<u>M-x
-    align-r</u>egexp__. At the prompt for a regular expression, type a
-    colon followed by a space. All the values line up and form a
-    column.
-
-    Notice that many of the JSON object's keys are not arranged
-    well. Mark a region within the outer braces, not including the
-    lines with the braces themselves, then run __<u>M-x
-    sort-l</u>ines__. This rearranges the object members so that
-    related _license_- and _registration_-prefixed members cluster
+    of sample data object that might appear in documentation.  Notice
+    that many of the JSON object's keys are not arranged coherently.
+    Mark a region around the first set of simple key/value pairs, all
+    the lines from `"numberOfDoors"` to `"vehicleModel"`.  Then run
+    __<u>M-x sort-l</u>ines__. This rearranges the object members so
+    that related _vehicle_- and _numberOf_-prefixed members cluster
     together.
+
+    Suppose readers also need to be able to compare data values more
+    easily.  Run __<u>M-x align-r</u>egexp__. At the prompt for a
+    regular expression, type a colon followed by a space. All the
+    values line up and form a neat column.  Note the alignment occurs
+    only within the region you already defined.
+
+    Still, the `"registration"` and `"license"` lines run on long, and
+    reference nested data structures that are improperly formatted,
+    each clumped on a single line. There are command-line utilities
+    available that reformat JSONs to be more readable, but instead of
+    leaving Emacs, running the command, and copying the results back
+    into the file, you can simply run the command directly on the
+    region. First, you want to redefine the region to encompass the
+    entire file. Go to the top of the file (__M-<__), set the mark
+    (__C-SPACE__), then go to the bottom of the file (__M->__). This
+    command invokes the external command line: __C-u M-|__.  Then at
+    the _Shell command on region_ prompt, type __python -m
+    json.tool__. That takes the contents of the region as the input to
+    the JSON-formatting command and replaces it with the processed
+    output. You should see a properly formatted JSON object, but with
+    all the keys alphabetized and the value alignment lost.
 
     Finally, open the accompanying [sample.js](sample.js) JavaScript
     source file. Mark a region around the `hiliteCode` function call
@@ -296,7 +312,7 @@ to flexibly edit large batches of files.
     each line is prefixed with `//` to disable the function. Notice
     the editing mode that enables this is `Java/l Abbrev`. If you had
     been editing a Python or Perl source file, it would have commented
-    each line with a `#` character.
+    each line with an appropriate `#` character.
 
 1.  __Ringing up kills__. Go to the start of any line with several
     sentences of text and use __C-z__ a couple of times to zap to the
